@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "配件命中规则 · 新增与编辑落库（本期方案）",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/sequence-rule-save-20261014-175206/rule-save.html"
+  },
+  "participants": [
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "规则页面",
+      "sublabel": "当前配件"
+    },
+    {
+      "id": "sol",
+      "type": "backend",
+      "label": "业务层",
+      "sublabel": "alsc-item-solution"
+    },
+    {
+      "id": "paas",
+      "type": "backend",
+      "label": "规则领域层",
+      "sublabel": "alsc-pos-dish"
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "配置存储",
+      "sublabel": "主体 / 条件 / 动作"
+    },
+    {
+      "id": "change",
+      "type": "messagebus",
+      "label": "配置变更",
+      "sublabel": "交接下发 / 发布"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "from": "ui",
+      "to": "sol",
+      "label": "提交配件 ID 与条件组",
+      "y": 170
+    },
+    {
+      "id": "m2",
+      "from": "sol",
+      "to": "paas",
+      "label": "校验品牌 / 配件 / 标准目标",
+      "y": 218,
+      "variant": "security"
+    },
+    {
+      "id": "m3",
+      "from": "paas",
+      "to": "db",
+      "label": "读取配件分组、顺序及旧规则",
+      "y": 266
+    },
+    {
+      "id": "m4",
+      "from": "db",
+      "to": "paas",
+      "label": "返回当前配置",
+      "y": 314,
+      "variant": "return"
+    },
+    {
+      "id": "m5",
+      "from": "paas",
+      "to": "db",
+      "label": "事务：保存主体 + 替换条件 + 单物料",
+      "y": 362
+    },
+    {
+      "id": "m6",
+      "from": "db",
+      "to": "paas",
+      "label": "提交；返回规则 ID",
+      "y": 410,
+      "variant": "return"
+    },
+    {
+      "id": "m7",
+      "from": "paas",
+      "to": "change",
+      "label": "提交后登记配置变更",
+      "y": 458,
+      "variant": "dashed"
+    },
+    {
+      "id": "m8",
+      "from": "paas",
+      "to": "sol",
+      "label": "返回完整保存结果",
+      "y": 506,
+      "variant": "return"
+    },
+    {
+      "id": "m9",
+      "from": "sol",
+      "to": "ui",
+      "label": "刷新规则与列表汇总",
+      "y": 554,
+      "variant": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "固定关系",
+      "items": [
+        "同配件多规则 OR；规则内维度 AND；维度内多值 OR。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "服务端装配",
+      "items": [
+        "pickGroup 和 priority 从当前配件组及配件顺序取得。"
+      ]
+    }
+  ]
+}

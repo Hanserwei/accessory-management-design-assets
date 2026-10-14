@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "配件管理端 · 系统用例与职责（本期方案）",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/architecture-use-cases-20261014-175206/use-cases.html"
+  },
+  "components": [
+    {
+      "id": "admin",
+      "type": "external",
+      "icon": "person",
+      "label": "总部 / 单店",
+      "sublabel": "拥有配件管理权限",
+      "pos": [
+        40,
+        180
+      ],
+      "size": [
+        150,
+        68
+      ]
+    },
+    {
+      "id": "page",
+      "type": "frontend",
+      "label": "配件管理单页",
+      "sublabel": "分组列表 · 配件列表",
+      "pos": [
+        290,
+        180
+      ],
+      "size": [
+        164,
+        68
+      ]
+    },
+    {
+      "id": "query",
+      "type": "backend",
+      "label": "查询配件与规则",
+      "sublabel": "分页 · 汇总 · 详情",
+      "pos": [
+        554,
+        40
+      ],
+      "size": [
+        172,
+        68
+      ]
+    },
+    {
+      "id": "items",
+      "type": "backend",
+      "label": "维护分组与配件",
+      "sublabel": "新增 · 编辑 · 引用保护",
+      "pos": [
+        554,
+        180
+      ],
+      "size": [
+        172,
+        68
+      ]
+    },
+    {
+      "id": "rules",
+      "type": "backend",
+      "label": "规则与配件排序",
+      "sublabel": "保存 · 启停 · 组内顺序",
+      "pos": [
+        554,
+        320
+      ],
+      "size": [
+        172,
+        68
+      ]
+    },
+    {
+      "id": "store",
+      "type": "database",
+      "label": "领域数据落库",
+      "sublabel": "资料 · 规则 · 条件 · 动作",
+      "pos": [
+        866,
+        180
+      ],
+      "size": [
+        180,
+        68
+      ]
+    },
+    {
+      "id": "targets",
+      "type": "external",
+      "label": "商品管理写入口",
+      "sublabel": "删除 SKU / 做法 / 加料",
+      "pos": [
+        40,
+        460
+      ],
+      "size": [
+        180,
+        68
+      ]
+    },
+    {
+      "id": "cascade",
+      "type": "backend",
+      "label": "删除级联处理",
+      "sublabel": "清引用 · 删除空规则",
+      "pos": [
+        554,
+        460
+      ],
+      "size": [
+        172,
+        68
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "entry",
+      "from": "admin",
+      "to": "page",
+      "label": "授权操作",
+      "variant": "security"
+    },
+    {
+      "id": "list",
+      "from": "page",
+      "to": "query",
+      "label": "列表 / 详情"
+    },
+    {
+      "id": "item-edit",
+      "from": "page",
+      "to": "items",
+      "label": "维护资料"
+    },
+    {
+      "id": "rule-edit",
+      "from": "page",
+      "to": "rules",
+      "label": "维护配置"
+    },
+    {
+      "id": "query-store",
+      "from": "query",
+      "to": "store",
+      "label": "只读查询"
+    },
+    {
+      "id": "item-store",
+      "from": "items",
+      "to": "store",
+      "label": "资料事务"
+    },
+    {
+      "id": "rule-store",
+      "from": "rules",
+      "to": "store",
+      "label": "配置事务"
+    },
+    {
+      "id": "target-delete",
+      "from": "targets",
+      "to": "cascade",
+      "label": "删除事件",
+      "variant": "dashed"
+    },
+    {
+      "id": "cascade-store",
+      "from": "cascade",
+      "to": "store",
+      "label": "清理事务"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "管理权限",
+      "items": [
+        "总部和单店可写；连锁门店只查询总部下发数据。"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "本稿范围",
+      "items": [
+        "管理端负责保存配置、排序及引用清理；命中算法由计算侧负责。"
+      ]
+    }
+  ]
+}

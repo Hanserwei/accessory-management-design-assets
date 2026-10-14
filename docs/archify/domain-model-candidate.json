@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "diagram_type": "class",
+  "meta": {
+    "title": "配件管理端 · 模型与引用（本期方案）",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/class-domain-model-20261014-175206/domain-model.html"
+  },
+  "layout": {
+    "mode": "grid",
+    "typeW": 250,
+    "typeMaxW": 290,
+    "gapX": 110,
+    "gapY": 120
+  },
+  "types": [
+    {
+      "id": "group",
+      "kind": "class",
+      "label": "DishCategoryModel",
+      "sublabel": "配件分组 · 复用",
+      "row": 0,
+      "col": 0,
+      "attributes": [
+        {
+          "name": "categoryId",
+          "type": "String"
+        },
+        {
+          "name": "parentId",
+          "type": "String"
+        },
+        {
+          "name": "categoryType",
+          "type": "ADDONS_GROUP"
+        }
+      ]
+    },
+    {
+      "id": "addon",
+      "kind": "class",
+      "label": "DishModel",
+      "sublabel": "配件 · 单 SKU · 复用",
+      "row": 0,
+      "col": 1,
+      "attributes": [
+        {
+          "name": "dishId",
+          "type": "String"
+        },
+        {
+          "name": "categoryId",
+          "type": "String"
+        },
+        {
+          "name": "sort",
+          "type": "Integer"
+        },
+        {
+          "name": "dishType",
+          "type": "PACKING_ADDONS"
+        }
+      ]
+    },
+    {
+      "id": "sku",
+      "kind": "class",
+      "label": "DishSkuModel",
+      "sublabel": "配件默认 SKU · 复用",
+      "row": 0,
+      "col": 2,
+      "attributes": [
+        {
+          "name": "skuId",
+          "type": "String"
+        },
+        {
+          "name": "dishId",
+          "type": "String"
+        },
+        {
+          "name": "sellPrice",
+          "type": "0"
+        }
+      ]
+    },
+    {
+      "id": "condition",
+      "kind": "class",
+      "label": "PackingRuleConditionModel",
+      "sublabel": "条件行 · 新增",
+      "row": 1,
+      "col": 0,
+      "attributes": [
+        {
+          "name": "dimension",
+          "type": "Enum"
+        },
+        {
+          "name": "targetId",
+          "type": "String"
+        },
+        {
+          "name": "targetParentId",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "id": "rule",
+      "kind": "class",
+      "label": "PackingRuleModel",
+      "sublabel": "一配件下多规则 · 新增",
+      "row": 1,
+      "col": 1,
+      "attributes": [
+        {
+          "name": "packingRuleId",
+          "type": "String"
+        },
+        {
+          "name": "pickGroup",
+          "type": "String"
+        },
+        {
+          "name": "priority",
+          "type": "Integer"
+        },
+        {
+          "name": "state",
+          "type": "Enum"
+        }
+      ]
+    },
+    {
+      "id": "action",
+      "kind": "class",
+      "label": "PackingRuleMaterialModel",
+      "sublabel": "本期每规则一条 · 新增",
+      "row": 1,
+      "col": 2,
+      "attributes": [
+        {
+          "name": "packingRuleId",
+          "type": "String"
+        },
+        {
+          "name": "materialId",
+          "type": "String"
+        },
+        {
+          "name": "factorType",
+          "type": "PER_ITEM"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "group-addon",
+      "from": "group",
+      "to": "addon",
+      "kind": "association",
+      "label": "1:N 配件"
+    },
+    {
+      "id": "addon-sku",
+      "from": "addon",
+      "to": "sku",
+      "kind": "composition",
+      "label": "1:1 SKU"
+    },
+    {
+      "id": "rule-condition",
+      "from": "rule",
+      "to": "condition",
+      "kind": "composition",
+      "label": "1:N 条件"
+    },
+    {
+      "id": "rule-action",
+      "from": "rule",
+      "to": "action",
+      "kind": "composition",
+      "label": "1:1 动作"
+    },
+    {
+      "id": "action-addon",
+      "from": "action",
+      "to": "addon",
+      "kind": "association",
+      "label": "materialId 引用"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "条件关系",
+      "items": [
+        "同配件下规则 OR；单规则维度 AND；同维度值 OR。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "优先级归属",
+      "items": [
+        "组内排序对象为配件；该配件全部规则共享同一组内优先级。"
+      ]
+    }
+  ]
+}

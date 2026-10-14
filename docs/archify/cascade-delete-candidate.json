@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "删除标准目标 · 清引用与删除空规则（本期方案）",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/sequence-cascade-delete-20261014-175206/cascade-delete.html"
+  },
+  "participants": [
+    {
+      "id": "source",
+      "type": "backend",
+      "label": "商品管理",
+      "sublabel": "SKU / 做法 / 加料"
+    },
+    {
+      "id": "events",
+      "type": "messagebus",
+      "label": "删除事件",
+      "sublabel": "携带域与目标 ID"
+    },
+    {
+      "id": "cascade",
+      "type": "backend",
+      "label": "级联清理服务",
+      "sublabel": "规则级互斥"
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "规则配置库",
+      "sublabel": "ONLINE / PAUSE"
+    },
+    {
+      "id": "change",
+      "type": "messagebus",
+      "label": "配置变更",
+      "sublabel": "交接下发 / 发布"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "from": "source",
+      "to": "events",
+      "label": "源删除提交后发送目标删除事件",
+      "y": 170,
+      "variant": "dashed"
+    },
+    {
+      "id": "m2",
+      "from": "events",
+      "to": "cascade",
+      "label": "消费删除事件",
+      "y": 218,
+      "variant": "dashed"
+    },
+    {
+      "id": "m3",
+      "from": "cascade",
+      "to": "db",
+      "label": "按维度 + 目标 ID 反查引用",
+      "y": 266
+    },
+    {
+      "id": "m4",
+      "from": "db",
+      "to": "cascade",
+      "label": "返回受影响规则及原维度",
+      "y": 314,
+      "variant": "return"
+    },
+    {
+      "id": "m5",
+      "from": "cascade",
+      "to": "db",
+      "label": "锁内事务：删除命中条件行",
+      "y": 362
+    },
+    {
+      "id": "m6",
+      "from": "db",
+      "to": "cascade",
+      "label": "返回剩余条件与维度",
+      "y": 410,
+      "variant": "return"
+    },
+    {
+      "id": "m7",
+      "from": "cascade",
+      "to": "db",
+      "label": "规则内容空：删除主体、条件、动作",
+      "y": 458
+    },
+    {
+      "id": "m8",
+      "from": "db",
+      "to": "cascade",
+      "label": "提交；返回变更规则 ID",
+      "y": 506,
+      "variant": "return"
+    },
+    {
+      "id": "m9",
+      "from": "cascade",
+      "to": "change",
+      "label": "登记更新 / 删除变更",
+      "y": 554,
+      "variant": "dashed"
+    },
+    {
+      "id": "m10",
+      "from": "cascade",
+      "to": "events",
+      "label": "消费成功；失败重试",
+      "y": 602,
+      "variant": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "级联口径",
+      "items": [
+        "总条件为空自动删除；某一原维度删空的处理单独评审。"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "作用范围",
+      "items": [
+        "总部删除清基础配置；门店删除只作用本门店数据。"
+      ]
+    }
+  ]
+}

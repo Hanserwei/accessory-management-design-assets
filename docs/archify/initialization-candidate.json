@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "配件分组 · 首次新增与单店补齐（本期方案）",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/sequence-initialization-20261014-175206/initialization.html"
+  },
+  "participants": [
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "管理页面",
+      "sublabel": "总部 / 单店"
+    },
+    {
+      "id": "sol",
+      "type": "backend",
+      "label": "业务层",
+      "sublabel": "alsc-item-solution"
+    },
+    {
+      "id": "ensure",
+      "type": "backend",
+      "label": "分类初始化",
+      "sublabel": "品牌级幂等服务"
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "基础分类库",
+      "sublabel": "dish_category"
+    },
+    {
+      "id": "sales",
+      "type": "backend",
+      "label": "单店销售补齐",
+      "sublabel": "目标菜单"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "from": "ui",
+      "to": "sol",
+      "label": "新增二级分组",
+      "y": 170
+    },
+    {
+      "id": "m2",
+      "from": "sol",
+      "to": "ensure",
+      "label": "授权后确保品牌根",
+      "y": 218,
+      "variant": "security"
+    },
+    {
+      "id": "m3",
+      "from": "ensure",
+      "to": "db",
+      "label": "锁内重查系统根",
+      "y": 266
+    },
+    {
+      "id": "m4",
+      "from": "db",
+      "to": "ensure",
+      "label": "返回已有 / 新建根 ID",
+      "y": 314,
+      "variant": "return"
+    },
+    {
+      "id": "m5",
+      "from": "ensure",
+      "to": "sol",
+      "label": "返回根 ID",
+      "y": 362,
+      "variant": "return"
+    },
+    {
+      "id": "m6",
+      "from": "sol",
+      "to": "sales",
+      "label": "仅单店：确保菜单根副本",
+      "y": 410
+    },
+    {
+      "id": "m7",
+      "from": "sales",
+      "to": "sol",
+      "label": "单店副本已完整",
+      "y": 458,
+      "variant": "return"
+    },
+    {
+      "id": "m8",
+      "from": "sol",
+      "to": "db",
+      "label": "创建二级分组 parentId=根 ID",
+      "y": 506
+    },
+    {
+      "id": "m9",
+      "from": "db",
+      "to": "sol",
+      "label": "返回分组 ID",
+      "y": 554,
+      "variant": "return"
+    },
+    {
+      "id": "m10",
+      "from": "sol",
+      "to": "ui",
+      "label": "创建成功",
+      "y": 602,
+      "variant": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "总部边界",
+      "items": [
+        "总部首次新增只补品牌根，不遍历全门店。"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "门店开通",
+      "items": [
+        "品牌根已有才补当前菜单副本；无品牌根则跳过。"
+      ]
+    }
+  ]
+}

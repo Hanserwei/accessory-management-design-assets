@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "配件组 · 排序与规则优先级同步（本期方案）",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/sequence-group-priority-20261014-175206/group-priority.html"
+  },
+  "participants": [
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "组内优先级",
+      "sublabel": "管理页外侧入口"
+    },
+    {
+      "id": "sol",
+      "type": "backend",
+      "label": "业务层",
+      "sublabel": "完整配件 ID 顺序"
+    },
+    {
+      "id": "paas",
+      "type": "backend",
+      "label": "配件领域层",
+      "sublabel": "组级互斥"
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "资料与规则库",
+      "sublabel": "sort / priority"
+    },
+    {
+      "id": "change",
+      "type": "messagebus",
+      "label": "配置变更",
+      "sublabel": "交接发布"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "from": "ui",
+      "to": "sol",
+      "label": "提交分组 ID + 全组配件顺序",
+      "y": 170
+    },
+    {
+      "id": "m2",
+      "from": "sol",
+      "to": "paas",
+      "label": "校验权限及当前组",
+      "y": 218,
+      "variant": "security"
+    },
+    {
+      "id": "m3",
+      "from": "paas",
+      "to": "db",
+      "label": "锁内核验组成员与版本",
+      "y": 266
+    },
+    {
+      "id": "m4",
+      "from": "db",
+      "to": "paas",
+      "label": "返回当前有效成员",
+      "y": 314,
+      "variant": "return"
+    },
+    {
+      "id": "m5",
+      "from": "paas",
+      "to": "db",
+      "label": "事务：重排 sort；同步全部规则 priority",
+      "y": 362
+    },
+    {
+      "id": "m6",
+      "from": "db",
+      "to": "paas",
+      "label": "提交同一组配置",
+      "y": 410,
+      "variant": "return"
+    },
+    {
+      "id": "m7",
+      "from": "paas",
+      "to": "change",
+      "label": "登记排序配置变更",
+      "y": 458,
+      "variant": "dashed"
+    },
+    {
+      "id": "m8",
+      "from": "paas",
+      "to": "sol",
+      "label": "返回最新组内顺序",
+      "y": 506,
+      "variant": "return"
+    },
+    {
+      "id": "m9",
+      "from": "sol",
+      "to": "ui",
+      "label": "刷新优先级弹层",
+      "y": 554,
+      "variant": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "排序对象",
+      "items": [
+        "粗吸管、细吸管等配件；不是规则卡片。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "一致性",
+      "items": [
+        "启用、停用及新增规则共用当前配件顺序。"
+      ]
+    }
+  ]
+}
