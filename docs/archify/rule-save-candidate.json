@@ -5,7 +5,7 @@
     "title": "配件命中规则 · 新增与编辑落库（本期方案）",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/sequence-rule-save-20261014-175206/rule-save.html"
+    "output": ".archify/sequence-rule-save-20261015-100424/rule-save.html"
   },
   "participants": [
     {
@@ -34,9 +34,9 @@
     },
     {
       "id": "change",
-      "type": "messagebus",
-      "label": "配置变更",
-      "sublabel": "交接下发 / 发布"
+      "type": "backend",
+      "label": "管理变更登记",
+      "sublabel": "管理侧审计事实"
     }
   ],
   "messages": [
@@ -51,7 +51,7 @@
       "id": "m2",
       "from": "sol",
       "to": "paas",
-      "label": "校验品牌 / 配件 / 标准目标",
+      "label": "核验总部权限及合法目标",
       "y": 218,
       "variant": "security"
     },
@@ -74,7 +74,7 @@
       "id": "m5",
       "from": "paas",
       "to": "db",
-      "label": "事务：保存主体 + 替换条件 + 单物料",
+      "label": "事务：保存主体、条件及单物料",
       "y": 362
     },
     {
@@ -89,7 +89,7 @@
       "id": "m7",
       "from": "paas",
       "to": "change",
-      "label": "提交后登记配置变更",
+      "label": "提交后登记管理变更",
       "y": 458,
       "variant": "dashed"
     },
@@ -122,7 +122,8 @@
       "dot": "amber",
       "title": "服务端装配",
       "items": [
-        "pickGroup 和 priority 从当前配件组及配件顺序取得。"
+        "pickGroup=来源categoryId；priority由全组配件sort映射，值越大越优先。",
+        "新建默认ONLINE；编辑保留原状态，已暂停规则不因保存自动恢复。"
       ]
     }
   ]

@@ -2,10 +2,10 @@
   "schema_version": 1,
   "diagram_type": "sequence",
   "meta": {
-    "title": "删除标准目标 · 清引用与删除空规则（本期方案）",
+    "title": "删除标准目标 · 清引用、暂停与逻辑删除",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/sequence-cascade-delete-20261014-175206/cascade-delete.html"
+    "output": ".archify/sequence-cascade-delete-20261015-100424/cascade-delete.html"
   },
   "participants": [
     {
@@ -34,9 +34,9 @@
     },
     {
       "id": "change",
-      "type": "messagebus",
-      "label": "配置变更",
-      "sublabel": "交接下发 / 发布"
+      "type": "backend",
+      "label": "管理变更登记",
+      "sublabel": "清引用 / 暂停 / 删除"
     }
   ],
   "messages": [
@@ -75,14 +75,14 @@
       "id": "m5",
       "from": "cascade",
       "to": "db",
-      "label": "锁内事务：删除命中条件行",
+      "label": "锁内：记录原维度并清目标条件",
       "y": 362
     },
     {
       "id": "m6",
       "from": "db",
       "to": "cascade",
-      "label": "返回剩余条件与维度",
+      "label": "返回原维度及清理后条件",
       "y": 410,
       "variant": "return"
     },
@@ -90,31 +90,47 @@
       "id": "m7",
       "from": "cascade",
       "to": "db",
-      "label": "规则内容空：删除主体、条件、动作",
+      "label": "总条件为空：置 INVALID",
+      "note": "清条件、动作及管理快照",
       "y": 458
     },
     {
       "id": "m8",
-      "from": "db",
-      "to": "cascade",
-      "label": "提交；返回变更规则 ID",
-      "y": 506,
-      "variant": "return"
+      "from": "cascade",
+      "to": "db",
+      "label": "否则原维度删空：置 PAUSE",
+      "note": "保留剩余条件与物料动作",
+      "y": 536
     },
     {
       "id": "m9",
       "from": "cascade",
-      "to": "change",
-      "label": "登记更新 / 删除变更",
-      "y": 554,
-      "variant": "dashed"
+      "to": "db",
+      "label": "否则：保持原状态",
+      "y": 614
     },
     {
       "id": "m10",
+      "from": "db",
+      "to": "cascade",
+      "label": "事务提交；返回各分支结果",
+      "y": 662,
+      "variant": "return"
+    },
+    {
+      "id": "m11",
+      "from": "cascade",
+      "to": "change",
+      "label": "登记清引用、暂停或删除事实",
+      "y": 710,
+      "variant": "dashed"
+    },
+    {
+      "id": "m12",
       "from": "cascade",
       "to": "events",
-      "label": "消费成功；失败重试",
-      "y": 602,
+      "label": "消费成功；失败回滚并重试",
+      "y": 758,
       "variant": "return"
     }
   ],
@@ -123,7 +139,8 @@
       "dot": "amber",
       "title": "级联口径",
       "items": [
-        "总条件为空自动删除；某一原维度删空的处理单独评审。"
+        "三个互斥分支：总条件空逻辑删除；原AND维度空且其他有值则暂停；否则保留状态。",
+        "原本未选择的维度不触发暂停；建议暂停后重存条件，再显式启用。"
       ]
     },
     {

@@ -596,11 +596,11 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
         </g>
         </g>
 
-        <g data-edge-from="sol" data-edge-to="paas" data-edge-label="校验品牌 / 配件 / 标准目标" data-edge-key="1" data-edge-id="m2">
+        <g data-edge-from="sol" data-edge-to="paas" data-edge-label="核验总部权限及合法目标" data-edge-key="1" data-edge-id="m2">
           <path data-composition-edge-from="sol" data-composition-edge-to="paas" data-composition-edge-id="m2" data-composition-points="307.25,218;464,218" d="M 307.25 218 L 464 218" class="a-security" data-animate="edge" style="--step: 1;" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
         <g>
-          <rect x="293.825" y="198" width="183.6" height="18" rx="3" class="c-mask"/>
-          <text x="385.625" y="208" class="t-edge-security" font-size="11" text-anchor="middle">校验品牌 / 配件 / 标准目标</text>
+          <rect x="307.025" y="198" width="157.2" height="18" rx="3" class="c-mask"/>
+          <text x="385.625" y="208" class="t-edge-security" font-size="11" text-anchor="middle">核验总部权限及合法目标</text>
         </g>
         </g>
 
@@ -620,11 +620,11 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
         </g>
         </g>
 
-        <g data-edge-from="paas" data-edge-to="db" data-edge-label="事务：保存主体 + 替换条件 + 单物料" data-edge-key="4" data-edge-id="m5">
+        <g data-edge-from="paas" data-edge-to="db" data-edge-label="事务：保存主体、条件及单物料" data-edge-key="4" data-edge-id="m5">
           <path data-composition-edge-from="paas" data-composition-edge-to="db" data-composition-edge-id="m5" data-composition-points="478,362;634.75,362" d="M 478 362 L 634.75 362" class="a-default" data-animate="edge" style="--step: 4;" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <g>
-          <rect x="438.175" y="342" width="236.39999999999998" height="18" rx="3" class="c-mask"/>
-          <text x="556.375" y="352" class="t-muted" font-size="11" text-anchor="middle">事务：保存主体 + 替换条件 + 单物料</text>
+          <rect x="457.975" y="342" width="196.79999999999998" height="18" rx="3" class="c-mask"/>
+          <text x="556.375" y="352" class="t-muted" font-size="11" text-anchor="middle">事务：保存主体、条件及单物料</text>
         </g>
         </g>
 
@@ -636,11 +636,11 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
         </g>
         </g>
 
-        <g data-edge-from="paas" data-edge-to="change" data-edge-label="提交后登记配置变更" data-edge-key="6" data-edge-id="m7">
+        <g data-edge-from="paas" data-edge-to="change" data-edge-label="提交后登记管理变更" data-edge-key="6" data-edge-id="m7">
           <path data-composition-edge-from="paas" data-composition-edge-to="change" data-composition-edge-id="m7" data-composition-points="478,458;805.5,458" d="M 478 458 L 805.5 458" class="a-dashed" data-animate="edge" style="--step: 6;" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
         <g>
           <rect x="576.35" y="438" width="130.8" height="18" rx="3" class="c-mask"/>
-          <text x="641.75" y="448" class="t-edge-dashed" font-size="11" text-anchor="middle">提交后登记配置变更</text>
+          <text x="641.75" y="448" class="t-edge-dashed" font-size="11" text-anchor="middle">提交后登记管理变更</text>
         </g>
         </g>
 
@@ -712,18 +712,15 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
           <text x="641.75" y="122" class="t-muted" font-size="7" text-anchor="middle">主体 / 条件 / 动作</text>
         </g>
 
-        <g id="node-change" data-node-id="change" data-node-label="配置变更" tabindex="0" role="button" aria-label="聚焦配置变更，交接下发 / 发布, 时序参与者" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="交接下发 / 发布" data-node-context="时序参与者">
-          <title>配置变更 · 交接下发 / 发布 · 时序参与者</title>
+        <g id="node-change" data-node-id="change" data-node-label="管理变更登记" tabindex="0" role="button" aria-label="聚焦管理变更登记，管理侧审计事实, 时序参与者" aria-pressed="false" data-node-kind="backend" data-node-sublabel="管理侧审计事实" data-node-context="时序参与者">
+          <title>管理变更登记 · 管理侧审计事实 · 时序参与者</title>
           <rect x="745" y="72" width="135" height="60" rx="6" class="c-mask"/>
-          <rect x="745" y="72" width="135" height="60" rx="6" class="c-messagebus" data-animate="node" style="--step: 4; --flow-node-name: archify-relay-node-4;" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(751 78) scale(0.6875)">
-            <path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/>
-            <circle cx="5" cy="4.5" r="1" class="sigil-fill"/>
-            <circle cx="10.5" cy="8" r="1" class="sigil-fill"/>
-            <circle cx="7" cy="11.5" r="1" class="sigil-fill"/>
+          <rect x="745" y="72" width="135" height="60" rx="6" class="c-backend" data-animate="node" style="--step: 4; --flow-node-name: archify-relay-node-4;" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(751 78) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" x="812.5" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">配置变更</text>
-          <text x="812.5" y="122" class="t-muted" font-size="7" text-anchor="middle">交接下发 / 发布</text>
+          <text data-node-label="" x="812.5" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">管理变更登记</text>
+          <text x="812.5" y="122" class="t-muted" font-size="7" text-anchor="middle">管理侧审计事实</text>
         </g>
 
         <!-- Legend -->

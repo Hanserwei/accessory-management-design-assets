@@ -5,7 +5,7 @@
     "title": "配件管理端 · 系统用例与职责（本期方案）",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/architecture-use-cases-20261014-175206/use-cases.html"
+    "output": ".archify/architecture-use-cases-20261015-100424/use-cases.html"
   },
   "components": [
     {
@@ -13,7 +13,7 @@
       "type": "external",
       "icon": "person",
       "label": "总部 / 单店",
-      "sublabel": "拥有配件管理权限",
+      "sublabel": "总部统一管理权限",
       "pos": [
         40,
         180
@@ -111,7 +111,7 @@
       "id": "cascade",
       "type": "backend",
       "label": "删除级联处理",
-      "sublabel": "清引用 · 删除空规则",
+      "sublabel": "清引用 · 暂停 / 删除",
       "pos": [
         554,
         460
@@ -185,7 +185,7 @@
       "dot": "amber",
       "title": "管理权限",
       "items": [
-        "总部和单店可写；连锁门店只查询总部下发数据。"
+        "总部统一管理配件；连锁门店不能自行创建或修改，单店沿用自身管理权限。"
       ]
     },
     {

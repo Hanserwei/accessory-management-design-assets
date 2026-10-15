@@ -5,7 +5,7 @@
     "title": "配件组 · 排序与规则优先级同步（本期方案）",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/sequence-group-priority-20261014-175206/group-priority.html"
+    "output": ".archify/sequence-group-priority-20261015-100424/group-priority.html"
   },
   "participants": [
     {
@@ -34,9 +34,9 @@
     },
     {
       "id": "change",
-      "type": "messagebus",
-      "label": "配置变更",
-      "sublabel": "交接发布"
+      "type": "backend",
+      "label": "管理变更登记",
+      "sublabel": "组身份与优先级"
     }
   ],
   "messages": [
@@ -44,14 +44,14 @@
       "id": "m1",
       "from": "ui",
       "to": "sol",
-      "label": "提交分组 ID + 全组配件顺序",
+      "label": "提交分组、全组顺序及快照",
       "y": 170
     },
     {
       "id": "m2",
       "from": "sol",
       "to": "paas",
-      "label": "校验权限及当前组",
+      "label": "核验总部权限及当前组",
       "y": 218,
       "variant": "security"
     },
@@ -59,7 +59,7 @@
       "id": "m3",
       "from": "paas",
       "to": "db",
-      "label": "锁内核验组成员与版本",
+      "label": "锁内核验全组成员与快照",
       "y": 266
     },
     {
@@ -74,7 +74,7 @@
       "id": "m5",
       "from": "paas",
       "to": "db",
-      "label": "事务：重排 sort；同步全部规则 priority",
+      "label": "事务：重排sort并映射priority",
       "y": 362
     },
     {
@@ -122,7 +122,8 @@
       "dot": "amber",
       "title": "一致性",
       "items": [
-        "启用、停用及新增规则共用当前配件顺序。"
+        "同配件的ONLINE/PAUSE规则共享priority，新规则继承当前配件顺序。",
+        "pickGroup=来源categoryId；priority越大越优先，口径同步给计算侧。"
       ]
     }
   ]

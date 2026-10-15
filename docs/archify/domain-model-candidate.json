@@ -5,7 +5,7 @@
     "title": "配件管理端 · 模型与引用（本期方案）",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/class-domain-model-20261014-175206/domain-model.html"
+    "output": ".archify/class-domain-model-20261015-100424/domain-model.html"
   },
   "layout": {
     "mode": "grid",
@@ -198,14 +198,15 @@
       "dot": "cyan",
       "title": "条件关系",
       "items": [
-        "同配件下规则 OR；单规则维度 AND；同维度值 OR。"
+        "同配件下规则 OR；单规则维度 AND；同维度值 OR。",
+        "新建 ONLINE；暂停 PAUSE；逻辑删除 INVALID。"
       ]
     },
     {
       "dot": "amber",
-      "title": "优先级归属",
+      "title": "组与优先级",
       "items": [
-        "组内排序对象为配件；该配件全部规则共享同一组内优先级。"
+        "pickGroup=来源categoryId；priority映射全组配件sort，值越大越优先。"
       ]
     }
   ]

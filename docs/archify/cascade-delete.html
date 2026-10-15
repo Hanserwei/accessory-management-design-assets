@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 3.1.0">
   <meta name="archify-reader-contract" content="declared-wide-v1">
-  <title>删除标准目标 · 清引用与删除空规则（本期方案）</title>
+  <title>删除标准目标 · 清引用、暂停与逻辑删除</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -5150,7 +5150,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="蓝图 / 修订 01"
            data-preset-badge-editorial="编辑风格 / 现场笔记">
         <div class="pulse-dot"></div>
-        <h1>删除标准目标 · 清引用与删除空规则（本期方案）</h1>
+        <h1>删除标准目标 · 清引用、暂停与逻辑删除</h1>
       </div>
     </div>
 
@@ -5159,8 +5159,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / 图版 04">
-      <svg viewBox="0 0 920 706" data-sequence-column-fit="spread" data-reader-fit="width-first" role="img" lang="zh-CN" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-motion-choreography="sequence">
-        <title id="archify-diagram-title">删除标准目标 · 清引用与删除空规则（本期方案）</title>
+      <svg viewBox="0 0 920 862" data-sequence-column-fit="spread" data-reader-fit="width-first" role="img" lang="zh-CN" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-motion-choreography="sequence">
+        <title id="archify-diagram-title">删除标准目标 · 清引用、暂停与逻辑删除</title>
         <desc id="archify-diagram-description">由 Archify 生成的时序图。</desc>
         <!-- Definitions -->
         <defs>
@@ -5188,11 +5188,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 
         <!-- Lifelines -->
-        <path d="M 129.5 142 L 129.5 610" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 300.25 142 L 300.25 610" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 471 142 L 471 610" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 641.75 142 L 641.75 610" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 812.5 142 L 812.5 610" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 129.5 142 L 129.5 766" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 300.25 142 L 300.25 766" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 471 142 L 471 766" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 641.75 142 L 641.75 766" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 812.5 142 L 812.5 766" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
 
         <!-- Activations -->
 
@@ -5230,51 +5230,69 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </g>
         </g>
 
-        <g data-edge-from="cascade" data-edge-to="db" data-edge-label="锁内事务：删除命中条件行" data-edge-key="4" data-edge-id="m5">
+        <g data-edge-from="cascade" data-edge-to="db" data-edge-label="锁内：记录原维度并清目标条件" data-edge-key="4" data-edge-id="m5">
           <path data-composition-edge-from="cascade" data-composition-edge-to="db" data-composition-edge-id="m5" data-composition-points="478,362;634.75,362" d="M 478 362 L 634.75 362" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="471.175" y="342" width="170.39999999999998" height="18" rx="3" class="c-mask"/>
-          <text x="556.375" y="352" class="t-muted" font-size="11" text-anchor="middle">锁内事务：删除命中条件行</text>
+          <rect x="457.975" y="342" width="196.79999999999998" height="18" rx="3" class="c-mask"/>
+          <text x="556.375" y="352" class="t-muted" font-size="11" text-anchor="middle">锁内：记录原维度并清目标条件</text>
         </g>
         </g>
 
-        <g data-edge-from="db" data-edge-to="cascade" data-edge-label="返回剩余条件与维度" data-edge-key="5" data-edge-id="m6">
+        <g data-edge-from="db" data-edge-to="cascade" data-edge-label="返回原维度及清理后条件" data-edge-key="5" data-edge-id="m6">
           <path data-composition-edge-from="db" data-composition-edge-to="cascade" data-composition-edge-id="m6" data-composition-points="634.75,410;478,410" d="M 634.75 410 L 478 410" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="490.975" y="390" width="130.8" height="18" rx="3" class="c-mask"/>
-          <text x="556.375" y="400" class="t-muted" font-size="11" text-anchor="middle">返回剩余条件与维度</text>
+          <rect x="477.775" y="390" width="157.2" height="18" rx="3" class="c-mask"/>
+          <text x="556.375" y="400" class="t-muted" font-size="11" text-anchor="middle">返回原维度及清理后条件</text>
         </g>
         </g>
 
-        <g data-edge-from="cascade" data-edge-to="db" data-edge-label="规则内容空：删除主体、条件、动作" data-edge-key="6" data-edge-id="m7">
+        <g data-edge-from="cascade" data-edge-to="db" data-edge-label="总条件为空：置 INVALID" data-edge-key="6" data-edge-id="m7">
           <path data-composition-edge-from="cascade" data-composition-edge-to="db" data-composition-edge-id="m7" data-composition-points="478,458;634.75,458" d="M 478 458 L 634.75 458" class="a-default" data-animate="edge" style="--step:6" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="444.775" y="438" width="223.2" height="18" rx="3" class="c-mask"/>
-          <text x="556.375" y="448" class="t-muted" font-size="11" text-anchor="middle">规则内容空：删除主体、条件、动作</text>
+          <rect x="477.775" y="438" width="157.2" height="18" rx="3" class="c-mask"/>
+          <text x="556.375" y="448" class="t-muted" font-size="11" text-anchor="middle">总条件为空：置 INVALID</text>
+        </g>
+        <text data-detail="context" x="490" y="476" class="t-muted" font-size="7">清条件、动作及管理快照</text>
+        </g>
+
+        <g data-edge-from="cascade" data-edge-to="db" data-edge-label="否则原维度删空：置 PAUSE" data-edge-key="7" data-edge-id="m8">
+          <path data-composition-edge-from="cascade" data-composition-edge-to="db" data-composition-edge-id="m8" data-composition-points="478,536;634.75,536" d="M 478 536 L 634.75 536" class="a-default" data-animate="edge" style="--step:7" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <g data-detail="context">
+          <rect x="471.175" y="516" width="170.39999999999998" height="18" rx="3" class="c-mask"/>
+          <text x="556.375" y="526" class="t-muted" font-size="11" text-anchor="middle">否则原维度删空：置 PAUSE</text>
+        </g>
+        <text data-detail="context" x="490" y="554" class="t-muted" font-size="7">保留剩余条件与物料动作</text>
+        </g>
+
+        <g data-edge-from="cascade" data-edge-to="db" data-edge-label="否则：保持原状态" data-edge-key="8" data-edge-id="m9">
+          <path data-composition-edge-from="cascade" data-composition-edge-to="db" data-composition-edge-id="m9" data-composition-points="478,614;634.75,614" d="M 478 614 L 634.75 614" class="a-default" data-animate="edge" style="--step:8" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <g data-detail="context">
+          <rect x="497.575" y="594" width="117.6" height="18" rx="3" class="c-mask"/>
+          <text x="556.375" y="604" class="t-muted" font-size="11" text-anchor="middle">否则：保持原状态</text>
         </g>
         </g>
 
-        <g data-edge-from="db" data-edge-to="cascade" data-edge-label="提交；返回变更规则 ID" data-edge-key="7" data-edge-id="m8">
-          <path data-composition-edge-from="db" data-composition-edge-to="cascade" data-composition-edge-id="m8" data-composition-points="634.75,506;478,506" d="M 634.75 506 L 478 506" class="a-default" data-animate="edge" style="--step:7" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="db" data-edge-to="cascade" data-edge-label="事务提交；返回各分支结果" data-edge-key="9" data-edge-id="m10">
+          <path data-composition-edge-from="db" data-composition-edge-to="cascade" data-composition-edge-id="m10" data-composition-points="634.75,662;478,662" d="M 634.75 662 L 478 662" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="481.075" y="486" width="150.6" height="18" rx="3" class="c-mask"/>
-          <text x="556.375" y="496" class="t-muted" font-size="11" text-anchor="middle">提交；返回变更规则 ID</text>
+          <rect x="471.175" y="642" width="170.39999999999998" height="18" rx="3" class="c-mask"/>
+          <text x="556.375" y="652" class="t-muted" font-size="11" text-anchor="middle">事务提交；返回各分支结果</text>
         </g>
         </g>
 
-        <g data-edge-from="cascade" data-edge-to="change" data-edge-label="登记更新 / 删除变更" data-edge-key="8" data-edge-id="m9">
-          <path data-composition-edge-from="cascade" data-composition-edge-to="change" data-composition-edge-id="m9" data-composition-points="478,554;805.5,554" d="M 478 554 L 805.5 554" class="a-dashed" data-animate="edge" style="--step:8" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <g data-edge-from="cascade" data-edge-to="change" data-edge-label="登记清引用、暂停或删除事实" data-edge-key="10" data-edge-id="m11">
+          <path data-composition-edge-from="cascade" data-composition-edge-to="change" data-composition-edge-id="m11" data-composition-points="478,710;805.5,710" d="M 478 710 L 805.5 710" class="a-dashed" data-animate="edge" style="--step:10" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
         <g data-detail="context">
-          <rect x="573.05" y="534" width="137.39999999999998" height="18" rx="3" class="c-mask"/>
-          <text x="641.75" y="544" class="t-edge-dashed" font-size="11" text-anchor="middle">登记更新 / 删除变更</text>
+          <rect x="549.95" y="690" width="183.6" height="18" rx="3" class="c-mask"/>
+          <text x="641.75" y="700" class="t-edge-dashed" font-size="11" text-anchor="middle">登记清引用、暂停或删除事实</text>
         </g>
         </g>
 
-        <g data-edge-from="cascade" data-edge-to="events" data-edge-label="消费成功；失败重试" data-edge-key="9" data-edge-id="m10">
-          <path data-composition-edge-from="cascade" data-composition-edge-to="events" data-composition-edge-id="m10" data-composition-points="464,602;307.25,602" d="M 464 602 L 307.25 602" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="cascade" data-edge-to="events" data-edge-label="消费成功；失败回滚并重试" data-edge-key="11" data-edge-id="m12">
+          <path data-composition-edge-from="cascade" data-composition-edge-to="events" data-composition-edge-id="m12" data-composition-points="464,758;307.25,758" d="M 464 758 L 307.25 758" class="a-default" data-animate="edge" style="--step:11" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="320.225" y="582" width="130.8" height="18" rx="3" class="c-mask"/>
-          <text x="385.625" y="592" class="t-muted" font-size="11" text-anchor="middle">消费成功；失败重试</text>
+          <rect x="300.425" y="738" width="170.39999999999998" height="18" rx="3" class="c-mask"/>
+          <text x="385.625" y="748" class="t-muted" font-size="11" text-anchor="middle">消费成功；失败回滚并重试</text>
         </g>
         </g>
 
@@ -5330,34 +5348,31 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <text data-detail="context" x="641.75" y="122" class="t-muted" font-size="7" text-anchor="middle">ONLINE / PAUSE</text>
         </g>
 
-        <g id="node-change" data-node-id="change" data-node-label="配置变更" tabindex="0" role="button" aria-label="聚焦配置变更，交接下发 / 发布, 时序参与者" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="交接下发 / 发布" data-node-context="时序参与者">
-          <title>配置变更 · 交接下发 / 发布 · 时序参与者</title>
+        <g id="node-change" data-node-id="change" data-node-label="管理变更登记" tabindex="0" role="button" aria-label="聚焦管理变更登记，清引用 / 暂停 / 删除, 时序参与者" aria-pressed="false" data-node-kind="backend" data-node-sublabel="清引用 / 暂停 / 删除" data-node-context="时序参与者">
+          <title>管理变更登记 · 清引用 / 暂停 / 删除 · 时序参与者</title>
           <rect x="745" y="72" width="135" height="60" rx="6" class="c-mask"/>
-          <rect x="745" y="72" width="135" height="60" rx="6" class="c-messagebus" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(751 78) scale(0.6875)">
-            <path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/>
-            <circle cx="5" cy="4.5" r="1" class="sigil-fill"/>
-            <circle cx="10.5" cy="8" r="1" class="sigil-fill"/>
-            <circle cx="7" cy="11.5" r="1" class="sigil-fill"/>
+          <rect x="745" y="72" width="135" height="60" rx="6" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(751 78) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="812.5" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">配置变更</text>
-          <text data-detail="context" x="812.5" y="122" class="t-muted" font-size="7" text-anchor="middle">交接下发 / 发布</text>
+          <text data-node-label="" data-detail-anchor="" x="812.5" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">管理变更登记</text>
+          <text data-detail="context" x="812.5" y="122" class="t-muted" font-size="7" text-anchor="middle">清引用 / 暂停 / 删除</text>
         </g>
 
         <!-- Legend -->
         <g data-legend="">
-          <text x="40" y="632" class="t-primary" font-size="12" font-weight="650">图例</text>
-          <g data-legend-semantic-kind="return" data-legend-x="40" data-legend-baseline="652" data-legend-width="68">
-            <path d="M 40 649 L 74 649" class="a-default" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
-            <text x="83" y="652" class="t-muted" font-size="10" font-weight="500">返回</text>
+          <text x="40" y="788" class="t-primary" font-size="12" font-weight="650">图例</text>
+          <g data-legend-semantic-kind="return" data-legend-x="40" data-legend-baseline="808" data-legend-width="68">
+            <path d="M 40 805 L 74 805" class="a-default" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+            <text x="83" y="808" class="t-muted" font-size="10" font-weight="500">返回</text>
           </g>
-          <g data-legend-semantic-kind="dashed" data-legend-x="130" data-legend-baseline="652" data-legend-width="93">
-            <path d="M 130 649 L 164 649" class="a-dashed" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-            <text x="173" y="652" class="t-muted" font-size="10" font-weight="500">异步追踪</text>
+          <g data-legend-semantic-kind="dashed" data-legend-x="130" data-legend-baseline="808" data-legend-width="93">
+            <path d="M 130 805 L 164 805" class="a-dashed" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+            <text x="173" y="808" class="t-muted" font-size="10" font-weight="500">异步追踪</text>
           </g>
-          <g data-legend-semantic-kind="default" data-legend-x="245" data-legend-baseline="652" data-legend-width="93">
-            <path d="M 245 649 L 279 649" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-            <text x="288" y="652" class="t-muted" font-size="10" font-weight="500">普通消息</text>
+          <g data-legend-semantic-kind="default" data-legend-x="245" data-legend-baseline="808" data-legend-width="93">
+            <path d="M 245 805 L 279 805" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+            <text x="288" y="808" class="t-muted" font-size="10" font-weight="500">普通消息</text>
           </g>
         </g>
       </svg>
@@ -5543,7 +5558,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>级联口径</h3>
         </div>
         <ul>
-          <li>总条件为空自动删除；某一原维度删空的处理单独评审。</li>
+          <li>三个互斥分支：总条件空逻辑删除；原AND维度空且其他有值则暂停；否则保留状态。</li>
+          <li>原本未选择的维度不触发暂停；建议暂停后重存条件，再显式启用。</li>
         </ul>
       </div>
 
