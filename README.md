@@ -4,7 +4,7 @@
 
 在线预览：<https://hanserwei.github.io/accessory-management-design-assets/>
 
-当前版本：v0.5（2026-10-15）。[阅读系分文档](系分-配件管理端.md)。规则仅总部唯一一套、无门店副本；门店删除SKU/加料/做法不修改规则；SKU逐个选择。总部删除后原AND维度删空标为“已失效”，推荐独立validityStatus=VALID/EXPIRED以保留商户启停意图。Q3/Q4已明确，addOnsType默认值及失效恢复交互仍待评审。
+当前版本：v0.6（2026-10-15）。[阅读系分文档](系分-配件管理端.md)。已确认validity_status独立列及ext_info失效原因JSON；3.6.3附按日常库规范编写的三表建表SQL，供审核，未执行。[下载SQL](docs/sql/packing-rule-schema.sql)。现有Archify图稿保留v0.5模型结构，字段方案以v0.6系分和SQL为准。
 
 内容包括：
 
@@ -12,5 +12,6 @@
 - `docs/archify/*.html`：可交互的 Archify 图稿。
 - `docs/archify/*.svg`：静态 SVG 图稿。
 - `docs/archify/*-candidate.json`：Archify 可编辑源文件。
+- `docs/sql/packing-rule-schema.sql`：规则三表建表SQL审核稿。
 
 GitHub Pages 使用 `docs/` 目录发布。Markdown 文档可直接引用 `https://hanserwei.github.io/accessory-management-design-assets/` 下的图片和图稿链接。
