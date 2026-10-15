@@ -2,10 +2,10 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "配件管理端 · 系统用例与职责（本期方案）",
+    "title": "配件管理端 · 总部唯一规则与管理职责",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/architecture-use-cases-20261015-100424/use-cases.html"
+    "output": ".archify/architecture-use-cases-20261015-110926/use-cases.html"
   },
   "components": [
     {
@@ -82,8 +82,8 @@
     {
       "id": "store",
       "type": "database",
-      "label": "领域数据落库",
-      "sublabel": "资料 · 规则 · 条件 · 动作",
+      "label": "总部配置落库",
+      "sublabel": "唯一规则 · 条件 · 动作",
       "pos": [
         866,
         180
@@ -96,8 +96,8 @@
     {
       "id": "targets",
       "type": "external",
-      "label": "商品管理写入口",
-      "sublabel": "删除 SKU / 做法 / 加料",
+      "label": "总部商品管理",
+      "sublabel": "基础 SKU / 做法 / 加料",
       "pos": [
         40,
         460
@@ -111,7 +111,7 @@
       "id": "cascade",
       "type": "backend",
       "label": "删除级联处理",
-      "sublabel": "清引用 · 暂停 / 删除",
+      "sublabel": "清引用 · 失效 / 删除",
       "pos": [
         554,
         460
@@ -170,7 +170,7 @@
       "id": "target-delete",
       "from": "targets",
       "to": "cascade",
-      "label": "删除事件",
+      "label": "总部删除事件",
       "variant": "dashed"
     },
     {
@@ -185,14 +185,14 @@
       "dot": "amber",
       "title": "管理权限",
       "items": [
-        "总部统一管理配件；连锁门店不能自行创建或修改，单店沿用自身管理权限。"
+        "总部管理唯一规则；门店无规则副本，删除本地目标不修改总部规则。"
       ]
     },
     {
       "dot": "emerald",
       "title": "本稿范围",
       "items": [
-        "管理端负责保存配置、排序及引用清理；命中算法由计算侧负责。"
+        "商户state与系统有效性分开；计算只接收ONLINE+VALID（字段为建议）。"
       ]
     }
   ]

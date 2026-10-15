@@ -4,7 +4,7 @@
 
 在线预览：<https://hanserwei.github.io/accessory-management-design-assets/>
 
-当前版本：v0.4（2026-10-15）。[阅读系分文档](系分-配件管理端.md)。本轮确认总条件为空逻辑删除、原AND维度删空暂停、分组与优先级映射、总部管理权限和规则状态；Q3、Q4及addOnsType默认值仍待确认。
+当前版本：v0.5（2026-10-15）。[阅读系分文档](系分-配件管理端.md)。规则仅总部唯一一套、无门店副本；门店删除SKU/加料/做法不修改规则；SKU逐个选择。总部删除后原AND维度删空标为“已失效”，推荐独立validityStatus=VALID/EXPIRED以保留商户启停意图。Q3/Q4已明确，addOnsType默认值及失效恢复交互仍待评审。
 
 内容包括：
 

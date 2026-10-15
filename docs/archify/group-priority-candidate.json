@@ -5,7 +5,7 @@
     "title": "配件组 · 排序与规则优先级同步（本期方案）",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/sequence-group-priority-20261015-100424/group-priority.html"
+    "output": ".archify/sequence-group-priority-20261015-110926/group-priority.html"
   },
   "participants": [
     {
@@ -30,7 +30,7 @@
       "id": "db",
       "type": "database",
       "label": "资料与规则库",
-      "sublabel": "sort / priority"
+      "sublabel": "总部唯一配置"
     },
     {
       "id": "change",
@@ -122,8 +122,8 @@
       "dot": "amber",
       "title": "一致性",
       "items": [
-        "同配件的ONLINE/PAUSE规则共享priority，新规则继承当前配件顺序。",
-        "pickGroup=来源categoryId；priority越大越优先，口径同步给计算侧。"
+        "同配件所有非删除规则（含EXPIRED）共享priority，不因排序清除失效。",
+        "pickGroup=来源categoryId；priority越大越优先，口径由用户同步计算侧。"
       ]
     }
   ]

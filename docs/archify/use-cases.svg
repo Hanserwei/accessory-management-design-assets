@@ -569,7 +569,7 @@ svg[data-node-ui][data-preset="blueprint"] :is([data-graph-role="structural-fram
 svg[data-node-ui][data-preset="editorial"] :is([data-graph-role="structural-frame-label-mask"], g[data-edge-from] &gt; rect.c-mask, .phase-chip) { rx: 3px; }
 :root, svg { --bg: #f4f5f7; --grid: #e9edf2; --canvas-dot: #e2e7ec; --text: #111827; --text-muted: #5b6474; --text-dim: #9aa3b2; --text-faint: #6b7280; --panel: #ffffff; --panel-border: #e5e7eb; --lane-fill: rgba(248, 250, 252, 0.65); --lane-stroke: #cbd5e1; --arrow: #64748b; --arrow-emphasis: #059669; --mask: #ffffff; --frontend-fill: rgba(34, 211, 238, 0.15); --frontend-stroke: #0891b2; --backend-fill: rgba(52, 211, 153, 0.18); --backend-stroke: #059669; --database-fill: rgba(167, 139, 250, 0.2); --database-stroke: #7c3aed; --cloud-fill: rgba(251, 191, 36, 0.18); --cloud-stroke: #d97706; --security-fill: rgba(251, 113, 133, 0.15); --security-stroke: #e11d48; --messagebus-fill: rgba(251, 146, 60, 0.15); --messagebus-stroke: #ea580c; --external-fill: rgba(148, 163, 184, 0.18); --external-stroke: #64748b; --toolbar-bg: rgba(255, 255, 255, 0.92); --toolbar-border: #cbd5e1; --toolbar-text: #334155; --toolbar-hover: #ffffff; --toolbar-menu-bg: #ffffff; --flow-cycle: ; --flow-halo-peak: ; --flow-glow-peak: ; --flow-tail-peak: ; --flow-head-peak: ; --flow-wake-peak: ; --flow-ripple-peak: ; --flow-peak: ; }
 </style><rect x="0" y="0" width="1095" height="596" fill="#f4f5f7"/>
-        <title id="archify-diagram-title">配件管理端 · 系统用例与职责（本期方案）</title>
+        <title id="archify-diagram-title">配件管理端 · 总部唯一规则与管理职责</title>
         <desc id="archify-diagram-description">由 Archify 生成的架构图。</desc>
         <!-- Definitions -->
         <defs>
@@ -648,7 +648,7 @@ svg[data-node-ui][data-preset="editorial"] :is([data-graph-role="structural-fram
         </g>
         <g data-graph-role="automatic-crossover" style="--step:7">
           <path data-graph-role="automatic-crossover-underlay" d="M 220 494 L 554 494" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="targets" data-edge-to="cascade" data-edge-label="删除事件" data-edge-key="7" data-edge-id="target-delete" data-composition-points="220,494;554,494" data-composition-crossover="halo" data-composition-independent="true" d="M 220 494 L 554 494" class="a-dashed" data-animate="edge" style="--step: 7;" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-edge-from="targets" data-edge-to="cascade" data-edge-label="总部删除事件" data-edge-key="7" data-edge-id="target-delete" data-composition-points="220,494;554,494" data-composition-crossover="halo" data-composition-independent="true" d="M 220 494 L 554 494" class="a-dashed" data-animate="edge" style="--step: 7;" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:8">
           <path data-graph-role="automatic-crossover-underlay" d="M 726 476 L 874 476 Q 882 476 882 468 L 882 248" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
@@ -714,39 +714,39 @@ svg[data-node-ui][data-preset="editorial"] :is([data-graph-role="structural-fram
         <text x="640" y="368" class="t-muted" font-size="9" text-anchor="middle">保存 · 启停 · 组内顺序</text>
         </g>
 
-        <g id="node-store" data-node-id="store" data-node-label="领域数据落库" tabindex="0" role="button" aria-label="聚焦领域数据落库，资料 · 规则 · 条件 · 动作, 架构组件" aria-pressed="false" data-node-kind="database" data-node-sublabel="资料 · 规则 · 条件 · 动作" data-node-context="架构组件">
-          <title>领域数据落库 · 资料 · 规则 · 条件 · 动作 · 架构组件</title>
+        <g id="node-store" data-node-id="store" data-node-label="总部配置落库" tabindex="0" role="button" aria-label="聚焦总部配置落库，唯一规则 · 条件 · 动作, 架构组件" aria-pressed="false" data-node-kind="database" data-node-sublabel="唯一规则 · 条件 · 动作" data-node-context="架构组件">
+          <title>总部配置落库 · 唯一规则 · 条件 · 动作 · 架构组件</title>
           <rect x="866" y="180" width="180" height="68" rx="8" class="c-mask"/>
           <rect x="866" y="180" width="180" height="68" rx="8" class="c-database" data-animate="node" style="--step: 5; --flow-node-name: archify-relay-node-7;" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(872 186) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" x="956" y="212" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">领域数据落库</text>
-        <text x="956" y="228" class="t-muted" font-size="9" text-anchor="middle">资料 · 规则 · 条件 · 动作</text>
+          <text data-node-label="" x="956" y="212" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">总部配置落库</text>
+        <text x="956" y="228" class="t-muted" font-size="9" text-anchor="middle">唯一规则 · 条件 · 动作</text>
         </g>
 
-        <g id="node-targets" data-node-id="targets" data-node-label="商品管理写入口" tabindex="0" role="button" aria-label="聚焦商品管理写入口，删除 SKU / 做法 / 加料, 架构组件" aria-pressed="false" data-node-kind="external" data-node-sublabel="删除 SKU / 做法 / 加料" data-node-context="架构组件">
-          <title>商品管理写入口 · 删除 SKU / 做法 / 加料 · 架构组件</title>
+        <g id="node-targets" data-node-id="targets" data-node-label="总部商品管理" tabindex="0" role="button" aria-label="聚焦总部商品管理，基础 SKU / 做法 / 加料, 架构组件" aria-pressed="false" data-node-kind="external" data-node-sublabel="基础 SKU / 做法 / 加料" data-node-context="架构组件">
+          <title>总部商品管理 · 基础 SKU / 做法 / 加料 · 架构组件</title>
           <rect x="40" y="460" width="180" height="68" rx="8" class="c-mask"/>
           <rect x="40" y="460" width="180" height="68" rx="8" class="c-external" data-animate="node" style="--step: 7; --flow-node-name: archify-relay-node-1;" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(46 466) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" x="130" y="492" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">商品管理写入口</text>
-        <text x="130" y="508" class="t-muted" font-size="9" text-anchor="middle">删除 SKU / 做法 / 加料</text>
+          <text data-node-label="" x="130" y="492" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">总部商品管理</text>
+        <text x="130" y="508" class="t-muted" font-size="9" text-anchor="middle">基础 SKU / 做法 / 加料</text>
         </g>
 
-        <g id="node-cascade" data-node-id="cascade" data-node-label="删除级联处理" tabindex="0" role="button" aria-label="聚焦删除级联处理，清引用 · 暂停 / 删除, 架构组件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="清引用 · 暂停 / 删除" data-node-context="架构组件">
-          <title>删除级联处理 · 清引用 · 暂停 / 删除 · 架构组件</title>
+        <g id="node-cascade" data-node-id="cascade" data-node-label="删除级联处理" tabindex="0" role="button" aria-label="聚焦删除级联处理，清引用 · 失效 / 删除, 架构组件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="清引用 · 失效 / 删除" data-node-context="架构组件">
+          <title>删除级联处理 · 清引用 · 失效 / 删除 · 架构组件</title>
           <rect x="554" y="460" width="172" height="68" rx="8" class="c-mask"/>
           <rect x="554" y="460" width="172" height="68" rx="8" class="c-backend" data-animate="node" style="--step: 8; --flow-node-name: archify-relay-node-3;" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(560 466) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
           <text data-node-label="" x="640" y="492" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">删除级联处理</text>
-        <text x="640" y="508" class="t-muted" font-size="9" text-anchor="middle">清引用 · 暂停 / 删除</text>
+        <text x="640" y="508" class="t-muted" font-size="9" text-anchor="middle">清引用 · 失效 / 删除</text>
         </g>
 
         <!-- Connection labels -->
@@ -778,9 +778,9 @@ svg[data-node-ui][data-preset="editorial"] :is([data-graph-role="structural-fram
           <rect x="771.8" y="266" width="48.4" height="14" rx="3" class="c-mask"/>
           <text x="796" y="276" class="t-edge-default" font-size="8" text-anchor="middle">配置事务</text>
         </g>
-        <g data-edge-from="targets" data-edge-to="cascade" data-edge-label="删除事件" data-edge-key="7" data-edge-id="target-delete">
-          <rect x="362.8" y="474" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="387" y="484" class="t-edge-dashed" font-size="8" text-anchor="middle">删除事件</text>
+        <g data-edge-from="targets" data-edge-to="cascade" data-edge-label="总部删除事件" data-edge-key="7" data-edge-id="target-delete">
+          <rect x="353.2" y="474" width="67.6" height="14" rx="3" class="c-mask"/>
+          <text x="387" y="484" class="t-edge-dashed" font-size="8" text-anchor="middle">总部删除事件</text>
         </g>
         <g data-edge-from="cascade" data-edge-to="store" data-edge-label="清理事务" data-edge-key="8" data-edge-id="cascade-store">
           <rect x="857.8" y="342" width="48.4" height="14" rx="3" class="c-mask"/>

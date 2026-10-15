@@ -2,10 +2,10 @@
   "schema_version": 1,
   "diagram_type": "sequence",
   "meta": {
-    "title": "配件分组 · 首次新增与单店补齐（本期方案）",
+    "title": "配件分类资料 · 首次新增与单店补齐",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/sequence-initialization-20261014-175206/initialization.html"
+    "output": ".archify/sequence-initialization-20261015-110926/initialization.html"
   },
   "participants": [
     {
@@ -36,7 +36,7 @@
       "id": "sales",
       "type": "backend",
       "label": "单店销售补齐",
-      "sublabel": "目标菜单"
+      "sublabel": "仅菜单分类资料"
     }
   ],
   "messages": [
@@ -82,14 +82,14 @@
       "id": "m6",
       "from": "sol",
       "to": "sales",
-      "label": "仅单店：确保菜单根副本",
+      "label": "仅单店：补菜单分类根",
       "y": 410
     },
     {
       "id": "m7",
       "from": "sales",
       "to": "sol",
-      "label": "单店副本已完整",
+      "label": "分类资料补齐完成",
       "y": 458,
       "variant": "return"
     },
@@ -122,14 +122,14 @@
       "dot": "amber",
       "title": "总部边界",
       "items": [
-        "总部首次新增只补品牌根，不遍历全门店。"
+        "沿用既有分类/商品初始化；配件规则总部唯一，不随菜单复制。"
       ]
     },
     {
       "dot": "emerald",
       "title": "门店开通",
       "items": [
-        "品牌根已有才补当前菜单副本；无品牌根则跳过。"
+        "品牌根已有才补当前菜单分类；无品牌根则跳过，不创建规则副本。"
       ]
     }
   ]

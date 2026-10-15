@@ -2,10 +2,10 @@
   "schema_version": 1,
   "diagram_type": "sequence",
   "meta": {
-    "title": "配件命中规则 · 新增与编辑落库（本期方案）",
+    "title": "总部规则 · 逐SKU配置与有效性（方案建议）",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/sequence-rule-save-20261015-100424/rule-save.html"
+    "output": ".archify/sequence-rule-save-20261015-110926/rule-save.html"
   },
   "participants": [
     {
@@ -30,7 +30,7 @@
       "id": "db",
       "type": "database",
       "label": "配置存储",
-      "sublabel": "主体 / 条件 / 动作"
+      "sublabel": "总部唯一三表"
     },
     {
       "id": "change",
@@ -44,7 +44,7 @@
       "id": "m1",
       "from": "ui",
       "to": "sol",
-      "label": "提交配件 ID 与条件组",
+      "label": "提交逐选SKU及其他条件ID",
       "y": 170
     },
     {
@@ -75,7 +75,8 @@
       "from": "paas",
       "to": "db",
       "label": "事务：保存主体、条件及单物料",
-      "y": 362
+      "y": 362,
+      "note": "新建 ONLINE + VALID"
     },
     {
       "id": "m6",
@@ -122,8 +123,8 @@
       "dot": "amber",
       "title": "服务端装配",
       "items": [
-        "pickGroup=来源categoryId；priority由全组配件sort映射，值越大越优先。",
-        "新建默认ONLINE；编辑保留原状态，已暂停规则不因保存自动恢复。"
+        "新建ONLINE+VALID；编辑保留商户state；不保存SKU范围或选择来源快照。",
+        "修复失效规则建议确认完整条件后恢复VALID，原PAUSE仍停售。"
       ]
     }
   ]

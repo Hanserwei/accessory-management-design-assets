@@ -558,7 +558,7 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
 }
 :root, svg { --bg: #f4f5f7; --grid: #e9edf2; --canvas-dot: #e2e7ec; --text: #111827; --text-muted: #5b6474; --text-dim: #9aa3b2; --text-faint: #6b7280; --panel: #ffffff; --panel-border: #e5e7eb; --lane-fill: rgba(248, 250, 252, 0.65); --lane-stroke: #cbd5e1; --arrow: #64748b; --arrow-emphasis: #059669; --mask: #ffffff; --frontend-fill: rgba(34, 211, 238, 0.15); --frontend-stroke: #0891b2; --backend-fill: rgba(52, 211, 153, 0.18); --backend-stroke: #059669; --database-fill: rgba(167, 139, 250, 0.2); --database-stroke: #7c3aed; --cloud-fill: rgba(251, 191, 36, 0.18); --cloud-stroke: #d97706; --security-fill: rgba(251, 113, 133, 0.15); --security-stroke: #e11d48; --messagebus-fill: rgba(251, 146, 60, 0.15); --messagebus-stroke: #ea580c; --external-fill: rgba(148, 163, 184, 0.18); --external-stroke: #64748b; --toolbar-bg: rgba(255, 255, 255, 0.92); --toolbar-border: #cbd5e1; --toolbar-text: #334155; --toolbar-hover: #ffffff; --toolbar-menu-bg: #ffffff; --flow-cycle: ; --flow-halo-peak: ; --flow-glow-peak: ; --flow-tail-peak: ; --flow-head-peak: ; --flow-wake-peak: ; --flow-ripple-peak: ; --flow-peak: ; }
 </style><rect x="0" y="0" width="920" height="706" fill="#f4f5f7"/>
-        <title id="archify-diagram-title">配件分组 · 首次新增与单店补齐（本期方案）</title>
+        <title id="archify-diagram-title">配件分类资料 · 首次新增与单店补齐</title>
         <desc id="archify-diagram-description">由 Archify 生成的时序图。</desc>
         <!-- Definitions -->
         <defs>
@@ -636,19 +636,19 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
         </g>
         </g>
 
-        <g data-edge-from="sol" data-edge-to="sales" data-edge-label="仅单店：确保菜单根副本" data-edge-key="5" data-edge-id="m6">
+        <g data-edge-from="sol" data-edge-to="sales" data-edge-label="仅单店：补菜单分类根" data-edge-key="5" data-edge-id="m6">
           <path data-composition-edge-from="sol" data-composition-edge-to="sales" data-composition-edge-id="m6" data-composition-points="307.25,410;805.5,410" d="M 307.25 410 L 805.5 410" class="a-default" data-animate="edge" style="--step: 5;" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <g>
-          <rect x="477.775" y="390" width="157.2" height="18" rx="3" class="c-mask"/>
-          <text x="556.375" y="400" class="t-muted" font-size="11" text-anchor="middle">仅单店：确保菜单根副本</text>
+          <rect x="484.375" y="390" width="144" height="18" rx="3" class="c-mask"/>
+          <text x="556.375" y="400" class="t-muted" font-size="11" text-anchor="middle">仅单店：补菜单分类根</text>
         </g>
         </g>
 
-        <g data-edge-from="sales" data-edge-to="sol" data-edge-label="单店副本已完整" data-edge-key="6" data-edge-id="m7">
+        <g data-edge-from="sales" data-edge-to="sol" data-edge-label="分类资料补齐完成" data-edge-key="6" data-edge-id="m7">
           <path data-composition-edge-from="sales" data-composition-edge-to="sol" data-composition-edge-id="m7" data-composition-points="805.5,458;307.25,458" d="M 805.5 458 L 307.25 458" class="a-default" data-animate="edge" style="--step: 6;" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g>
-          <rect x="504.175" y="438" width="104.39999999999999" height="18" rx="3" class="c-mask"/>
-          <text x="556.375" y="448" class="t-muted" font-size="11" text-anchor="middle">单店副本已完整</text>
+          <rect x="497.575" y="438" width="117.6" height="18" rx="3" class="c-mask"/>
+          <text x="556.375" y="448" class="t-muted" font-size="11" text-anchor="middle">分类资料补齐完成</text>
         </g>
         </g>
 
@@ -728,15 +728,15 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
           <text x="641.75" y="122" class="t-muted" font-size="7" text-anchor="middle">dish_category</text>
         </g>
 
-        <g id="node-sales" data-node-id="sales" data-node-label="单店销售补齐" tabindex="0" role="button" aria-label="聚焦单店销售补齐，目标菜单, 时序参与者" aria-pressed="false" data-node-kind="backend" data-node-sublabel="目标菜单" data-node-context="时序参与者">
-          <title>单店销售补齐 · 目标菜单 · 时序参与者</title>
+        <g id="node-sales" data-node-id="sales" data-node-label="单店销售补齐" tabindex="0" role="button" aria-label="聚焦单店销售补齐，仅菜单分类资料, 时序参与者" aria-pressed="false" data-node-kind="backend" data-node-sublabel="仅菜单分类资料" data-node-context="时序参与者">
+          <title>单店销售补齐 · 仅菜单分类资料 · 时序参与者</title>
           <rect x="745" y="72" width="135" height="60" rx="6" class="c-mask"/>
           <rect x="745" y="72" width="135" height="60" rx="6" class="c-backend" data-animate="node" style="--step: 4; --flow-node-name: archify-relay-node-4;" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(751 78) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
           <text data-node-label="" x="812.5" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">单店销售补齐</text>
-          <text x="812.5" y="122" class="t-muted" font-size="7" text-anchor="middle">目标菜单</text>
+          <text x="812.5" y="122" class="t-muted" font-size="7" text-anchor="middle">仅菜单分类资料</text>
         </g>
 
         <!-- Legend -->

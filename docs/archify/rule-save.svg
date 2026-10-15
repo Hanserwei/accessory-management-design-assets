@@ -550,7 +550,7 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
 }
 :root, svg { --bg: #f4f5f7; --grid: #e9edf2; --canvas-dot: #e2e7ec; --text: #111827; --text-muted: #5b6474; --text-dim: #9aa3b2; --text-faint: #6b7280; --panel: #ffffff; --panel-border: #e5e7eb; --lane-fill: rgba(248, 250, 252, 0.65); --lane-stroke: #cbd5e1; --arrow: #64748b; --arrow-emphasis: #059669; --mask: #ffffff; --frontend-fill: rgba(34, 211, 238, 0.15); --frontend-stroke: #0891b2; --backend-fill: rgba(52, 211, 153, 0.18); --backend-stroke: #059669; --database-fill: rgba(167, 139, 250, 0.2); --database-stroke: #7c3aed; --cloud-fill: rgba(251, 191, 36, 0.18); --cloud-stroke: #d97706; --security-fill: rgba(251, 113, 133, 0.15); --security-stroke: #e11d48; --messagebus-fill: rgba(251, 146, 60, 0.15); --messagebus-stroke: #ea580c; --external-fill: rgba(148, 163, 184, 0.18); --external-stroke: #64748b; --toolbar-bg: rgba(255, 255, 255, 0.92); --toolbar-border: #cbd5e1; --toolbar-text: #334155; --toolbar-hover: #ffffff; --toolbar-menu-bg: #ffffff; --flow-cycle: ; --flow-halo-peak: ; --flow-glow-peak: ; --flow-tail-peak: ; --flow-head-peak: ; --flow-wake-peak: ; --flow-ripple-peak: ; --flow-peak: ; }
 </style><rect x="0" y="0" width="920" height="658" fill="#f4f5f7"/>
-        <title id="archify-diagram-title">配件命中规则 · 新增与编辑落库（本期方案）</title>
+        <title id="archify-diagram-title">总部规则 · 逐SKU配置与有效性（方案建议）</title>
         <desc id="archify-diagram-description">由 Archify 生成的时序图。</desc>
         <!-- Definitions -->
         <defs>
@@ -588,11 +588,11 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
 
 
         <!-- Messages -->
-        <g data-edge-from="ui" data-edge-to="sol" data-edge-label="提交配件 ID 与条件组" data-edge-key="0" data-edge-id="m1">
+        <g data-edge-from="ui" data-edge-to="sol" data-edge-label="提交逐选SKU及其他条件ID" data-edge-key="0" data-edge-id="m1">
           <path data-composition-edge-from="ui" data-composition-edge-to="sol" data-composition-edge-id="m1" data-composition-points="136.5,170;293.25,170" d="M 136.5 170 L 293.25 170" class="a-default" data-animate="edge" style="--step: 0;" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <g>
-          <rect x="142.875" y="150" width="144" height="18" rx="3" class="c-mask"/>
-          <text x="214.875" y="160" class="t-muted" font-size="11" text-anchor="middle">提交配件 ID 与条件组</text>
+          <rect x="132.97500000000002" y="150" width="163.79999999999998" height="18" rx="3" class="c-mask"/>
+          <text x="214.875" y="160" class="t-muted" font-size="11" text-anchor="middle">提交逐选SKU及其他条件ID</text>
         </g>
         </g>
 
@@ -626,6 +626,7 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
           <rect x="457.975" y="342" width="196.79999999999998" height="18" rx="3" class="c-mask"/>
           <text x="556.375" y="352" class="t-muted" font-size="11" text-anchor="middle">事务：保存主体、条件及单物料</text>
         </g>
+        <text x="490" y="380" class="t-muted" font-size="7">新建 ONLINE + VALID</text>
         </g>
 
         <g data-edge-from="db" data-edge-to="paas" data-edge-label="提交；返回规则 ID" data-edge-key="5" data-edge-id="m6">
@@ -700,8 +701,8 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
           <text x="471" y="122" class="t-muted" font-size="7" text-anchor="middle">alsc-pos-dish</text>
         </g>
 
-        <g id="node-db" data-node-id="db" data-node-label="配置存储" tabindex="0" role="button" aria-label="聚焦配置存储，主体 / 条件 / 动作, 时序参与者" aria-pressed="false" data-node-kind="database" data-node-sublabel="主体 / 条件 / 动作" data-node-context="时序参与者">
-          <title>配置存储 · 主体 / 条件 / 动作 · 时序参与者</title>
+        <g id="node-db" data-node-id="db" data-node-label="配置存储" tabindex="0" role="button" aria-label="聚焦配置存储，总部唯一三表, 时序参与者" aria-pressed="false" data-node-kind="database" data-node-sublabel="总部唯一三表" data-node-context="时序参与者">
+          <title>配置存储 · 总部唯一三表 · 时序参与者</title>
           <rect x="574.25" y="72" width="135" height="60" rx="6" class="c-mask"/>
           <rect x="574.25" y="72" width="135" height="60" rx="6" class="c-database" data-animate="node" style="--step: 3; --flow-node-name: archify-relay-node-3;" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(580.25 78) scale(0.6875)">
@@ -709,7 +710,7 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
           <text data-node-label="" x="641.75" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">配置存储</text>
-          <text x="641.75" y="122" class="t-muted" font-size="7" text-anchor="middle">主体 / 条件 / 动作</text>
+          <text x="641.75" y="122" class="t-muted" font-size="7" text-anchor="middle">总部唯一三表</text>
         </g>
 
         <g id="node-change" data-node-id="change" data-node-label="管理变更登记" tabindex="0" role="button" aria-label="聚焦管理变更登记，管理侧审计事实, 时序参与者" aria-pressed="false" data-node-kind="backend" data-node-sublabel="管理侧审计事实" data-node-context="时序参与者">

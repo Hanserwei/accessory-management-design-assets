@@ -2,10 +2,10 @@
   "schema_version": 1,
   "diagram_type": "class",
   "meta": {
-    "title": "配件管理端 · 模型与引用（本期方案）",
+    "title": "配件管理端 · 总部唯一规则模型（有效性方案建议）",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/class-domain-model-20261015-100424/domain-model.html"
+    "output": ".archify/class-domain-model-20261015-110926/domain-model.html"
   },
   "layout": {
     "mode": "grid",
@@ -111,7 +111,7 @@
       "id": "rule",
       "kind": "class",
       "label": "PackingRuleModel",
-      "sublabel": "一配件下多规则 · 新增",
+      "sublabel": "总部唯一 · 新增",
       "row": 1,
       "col": 1,
       "attributes": [
@@ -130,6 +130,10 @@
         {
           "name": "state",
           "type": "Enum"
+        },
+        {
+          "name": "validityStatus",
+          "type": "VALID/EXPIRED"
         }
       ]
     },
@@ -198,15 +202,16 @@
       "dot": "cyan",
       "title": "条件关系",
       "items": [
-        "同配件下规则 OR；单规则维度 AND；同维度值 OR。",
-        "新建 ONLINE；暂停 PAUSE；逻辑删除 INVALID。"
+        "SKU逐个选择，targetId=基础skuId；三种维度AND，同维度多值OR。",
+        "state保留商户ONLINE/PAUSE，逻辑删除INVALID；validityStatus建议独立VALID/EXPIRED。"
       ]
     },
     {
       "dot": "amber",
       "title": "组与优先级",
       "items": [
-        "pickGroup=来源categoryId；priority映射全组配件sort，值越大越优先。"
+        "pickGroup=来源categoryId；priority映射全组配件sort，越大越优先。",
+        "总部唯一三表；门店、菜单和销售域均无规则副本。"
       ]
     }
   ]

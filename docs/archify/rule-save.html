@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 3.1.0">
   <meta name="archify-reader-contract" content="declared-wide-v1">
-  <title>配件命中规则 · 新增与编辑落库（本期方案）</title>
+  <title>总部规则 · 逐SKU配置与有效性（方案建议）</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -5150,7 +5150,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="蓝图 / 修订 01"
            data-preset-badge-editorial="编辑风格 / 现场笔记">
         <div class="pulse-dot"></div>
-        <h1>配件命中规则 · 新增与编辑落库（本期方案）</h1>
+        <h1>总部规则 · 逐SKU配置与有效性（方案建议）</h1>
       </div>
     </div>
 
@@ -5160,7 +5160,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / 图版 04">
       <svg viewBox="0 0 920 658" data-sequence-column-fit="spread" data-reader-fit="width-first" role="img" lang="zh-CN" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-motion-choreography="sequence">
-        <title id="archify-diagram-title">配件命中规则 · 新增与编辑落库（本期方案）</title>
+        <title id="archify-diagram-title">总部规则 · 逐SKU配置与有效性（方案建议）</title>
         <desc id="archify-diagram-description">由 Archify 生成的时序图。</desc>
         <!-- Definitions -->
         <defs>
@@ -5198,11 +5198,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 
         <!-- Messages -->
-        <g data-edge-from="ui" data-edge-to="sol" data-edge-label="提交配件 ID 与条件组" data-edge-key="0" data-edge-id="m1">
+        <g data-edge-from="ui" data-edge-to="sol" data-edge-label="提交逐选SKU及其他条件ID" data-edge-key="0" data-edge-id="m1">
           <path data-composition-edge-from="ui" data-composition-edge-to="sol" data-composition-edge-id="m1" data-composition-points="136.5,170;293.25,170" d="M 136.5 170 L 293.25 170" class="a-default" data-animate="edge" style="--step:0" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="142.875" y="150" width="144" height="18" rx="3" class="c-mask"/>
-          <text x="214.875" y="160" class="t-muted" font-size="11" text-anchor="middle">提交配件 ID 与条件组</text>
+          <rect x="132.97500000000002" y="150" width="163.79999999999998" height="18" rx="3" class="c-mask"/>
+          <text x="214.875" y="160" class="t-muted" font-size="11" text-anchor="middle">提交逐选SKU及其他条件ID</text>
         </g>
         </g>
 
@@ -5236,6 +5236,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <rect x="457.975" y="342" width="196.79999999999998" height="18" rx="3" class="c-mask"/>
           <text x="556.375" y="352" class="t-muted" font-size="11" text-anchor="middle">事务：保存主体、条件及单物料</text>
         </g>
+        <text data-detail="context" x="490" y="380" class="t-muted" font-size="7">新建 ONLINE + VALID</text>
         </g>
 
         <g data-edge-from="db" data-edge-to="paas" data-edge-label="提交；返回规则 ID" data-edge-key="5" data-edge-id="m6">
@@ -5310,8 +5311,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <text data-detail="context" x="471" y="122" class="t-muted" font-size="7" text-anchor="middle">alsc-pos-dish</text>
         </g>
 
-        <g id="node-db" data-node-id="db" data-node-label="配置存储" tabindex="0" role="button" aria-label="聚焦配置存储，主体 / 条件 / 动作, 时序参与者" aria-pressed="false" data-node-kind="database" data-node-sublabel="主体 / 条件 / 动作" data-node-context="时序参与者">
-          <title>配置存储 · 主体 / 条件 / 动作 · 时序参与者</title>
+        <g id="node-db" data-node-id="db" data-node-label="配置存储" tabindex="0" role="button" aria-label="聚焦配置存储，总部唯一三表, 时序参与者" aria-pressed="false" data-node-kind="database" data-node-sublabel="总部唯一三表" data-node-context="时序参与者">
+          <title>配置存储 · 总部唯一三表 · 时序参与者</title>
           <rect x="574.25" y="72" width="135" height="60" rx="6" class="c-mask"/>
           <rect x="574.25" y="72" width="135" height="60" rx="6" class="c-database" data-animate="node" style="--step:3" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(580.25 78) scale(0.6875)">
@@ -5319,7 +5320,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="641.75" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">配置存储</text>
-          <text data-detail="context" x="641.75" y="122" class="t-muted" font-size="7" text-anchor="middle">主体 / 条件 / 动作</text>
+          <text data-detail="context" x="641.75" y="122" class="t-muted" font-size="7" text-anchor="middle">总部唯一三表</text>
         </g>
 
         <g id="node-change" data-node-id="change" data-node-label="管理变更登记" tabindex="0" role="button" aria-label="聚焦管理变更登记，管理侧审计事实, 时序参与者" aria-pressed="false" data-node-kind="backend" data-node-sublabel="管理侧审计事实" data-node-context="时序参与者">
@@ -5546,8 +5547,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>服务端装配</h3>
         </div>
         <ul>
-          <li>pickGroup=来源categoryId；priority由全组配件sort映射，值越大越优先。</li>
-          <li>新建默认ONLINE；编辑保留原状态，已暂停规则不因保存自动恢复。</li>
+          <li>新建ONLINE+VALID；编辑保留商户state；不保存SKU范围或选择来源快照。</li>
+          <li>修复失效规则建议确认完整条件后恢复VALID，原PAUSE仍停售。</li>
         </ul>
       </div>
     </div>

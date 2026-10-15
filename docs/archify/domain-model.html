@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 3.1.0">
   <meta name="archify-reader-contract" content="declared-wide-v1">
-  <title>配件管理端 · 模型与引用（本期方案）</title>
+  <title>配件管理端 · 总部唯一规则模型（有效性方案建议）</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -5150,7 +5150,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="蓝图 / 修订 01"
            data-preset-badge-editorial="编辑风格 / 现场笔记">
         <div class="pulse-dot"></div>
-        <h1>配件管理端 · 模型与引用（本期方案）</h1>
+        <h1>配件管理端 · 总部唯一规则模型（有效性方案建议）</h1>
       </div>
     </div>
 
@@ -5159,8 +5159,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / 图版 04">
-      <svg viewBox="0 0 1099 466" role="img" lang="zh-CN" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-class-ui="" data-reader-fit="intrinsic-height" data-reader-min-text="7.5">
-        <title id="archify-diagram-title">配件管理端 · 模型与引用（本期方案）</title>
+      <svg viewBox="0 0 1099 486" role="img" lang="zh-CN" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-class-ui="" data-reader-fit="intrinsic-height" data-reader-min-text="7.5">
+        <title id="archify-diagram-title">配件管理端 · 总部唯一规则模型（有效性方案建议）</title>
         <desc id="archify-diagram-description">由 Archify 生成的类与接口图。</desc>
         <!-- Definitions -->
         <defs>
@@ -5232,9 +5232,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <!-- Relationships (before types for correct z-order) -->
         <path data-edge-from="group" data-edge-to="addon" data-edge-label="1:N 配件" data-edge-key="0" data-edge-id="group-addon" data-class-relationship="association" data-composition-points="302.5,102;433,102" d="M 302.5 102 L 433 102" class="a-default cl-relationship" data-animate="edge" style="--step:0" stroke-width="1.5" marker-end="url(#cl-open)"/>
         <path data-edge-from="addon" data-edge-to="sku" data-edge-label="1:1 SKU" data-edge-key="1" data-edge-id="addon-sku" data-class-relationship="composition" data-composition-points="683,89;809,89" d="M 683 89 L 809 89" class="a-default cl-relationship" data-animate="edge" style="--step:1" stroke-width="1.5" marker-start="url(#cl-diamond-filled)"/>
-        <path data-edge-from="rule" data-edge-to="condition" data-edge-label="1:N 条件" data-edge-key="2" data-edge-id="rule-condition" data-class-relationship="composition" data-composition-points="433,346;323,346" d="M 433 346 L 323 346" class="a-default cl-relationship" data-animate="edge" style="--step:2" stroke-width="1.5" marker-start="url(#cl-diamond-filled)"/>
-        <path data-edge-from="rule" data-edge-to="action" data-edge-label="1:1 动作" data-edge-key="3" data-edge-id="rule-action" data-class-relationship="composition" data-composition-points="683,359;793,359" d="M 683 359 L 793 359" class="a-default cl-relationship" data-animate="edge" style="--step:3" stroke-width="1.5" marker-start="url(#cl-diamond-filled)"/>
-        <path data-edge-from="action" data-edge-to="addon" data-edge-label="materialId 引用" data-edge-key="4" data-edge-id="action-addon" data-class-relationship="association" data-composition-points="793,333;738,333;738,115;683,115" d="M 793 333 L 746 333 Q 738 333 738 325 L 738 123 Q 738 115 730 115 L 683 115" class="a-default cl-relationship" data-animate="edge" style="--step:4" stroke-width="1.5" marker-end="url(#cl-open)"/>
+        <path data-edge-from="rule" data-edge-to="condition" data-edge-label="1:N 条件" data-edge-key="2" data-edge-id="rule-condition" data-class-relationship="composition" data-composition-points="433,356;323,356" d="M 433 356 L 323 356" class="a-default cl-relationship" data-animate="edge" style="--step:2" stroke-width="1.5" marker-start="url(#cl-diamond-filled)"/>
+        <path data-edge-from="rule" data-edge-to="action" data-edge-label="1:1 动作" data-edge-key="3" data-edge-id="rule-action" data-class-relationship="composition" data-composition-points="683,369;793,369" d="M 683 369 L 793 369" class="a-default cl-relationship" data-animate="edge" style="--step:3" stroke-width="1.5" marker-start="url(#cl-diamond-filled)"/>
+        <path data-edge-from="action" data-edge-to="addon" data-edge-label="materialId 引用" data-edge-key="4" data-edge-id="action-addon" data-class-relationship="association" data-composition-points="793,343;738,343;738,115;683,115" d="M 793 343 L 746 343 Q 738 343 738 335 L 738 123 Q 738 115 730 115 L 683 115" class="a-default cl-relationship" data-animate="edge" style="--step:4" stroke-width="1.5" marker-end="url(#cl-open)"/>
 
         <!-- Types -->
         <g id="node-group" data-node-id="group" data-node-label="DishCategoryModel" tabindex="0" role="button" aria-label="聚焦DishCategoryModel，配件分组 · 复用, 类" aria-pressed="false" data-node-kind="class" data-node-sublabel="配件分组 · 复用" data-node-context="类" data-class-kind="class" class="cl-hue-backend">
@@ -5300,28 +5300,28 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
         <g id="node-condition" data-node-id="condition" data-node-label="PackingRuleConditionModel" tabindex="0" role="button" aria-label="聚焦PackingRuleConditionModel，条件行 · 新增, 类" aria-pressed="false" data-node-kind="class" data-node-sublabel="条件行 · 新增" data-node-context="类" data-class-kind="class" class="cl-hue-backend">
           <title>PackingRuleConditionModel · 条件行 · 新增 · 类</title>
-          <rect x="32" y="294" width="291" height="104" rx="8" class="c-mask"/>
-          <rect x="32" y="294" width="291" height="104" rx="8" class="c-backend cl-type" data-animate="node" style="--step:2" stroke-width="1.2"/>
-          <path class="cl-header c-backend" stroke="none" d="M 40 294 H 315 A 8 8 0 0 1 323 302 V 328 H 32 V 302 A 8 8 0 0 1 40 294 Z"/>
-          <path class="cl-cap" d="M 44 295.4 H 311" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+          <rect x="32" y="304" width="291" height="104" rx="8" class="c-mask"/>
+          <rect x="32" y="304" width="291" height="104" rx="8" class="c-backend cl-type" data-animate="node" style="--step:2" stroke-width="1.2"/>
+          <path class="cl-header c-backend" stroke="none" d="M 40 304 H 315 A 8 8 0 0 1 323 312 V 338 H 32 V 312 A 8 8 0 0 1 40 304 Z"/>
+          <path class="cl-cap" d="M 44 305.4 H 311" stroke-width="2.6" stroke-linecap="round" fill="none"/>
           <g aria-hidden="true" class="cl-badge">
-            <rect x="44" y="303" width="16" height="16" rx="4.8" class="cl-badge-chip"/>
-            <text x="52" y="314.5" class="t-backend cl-badge-letter" font-size="10" font-weight="800" text-anchor="middle">C</text>
+            <rect x="44" y="313" width="16" height="16" rx="4.8" class="cl-badge-chip"/>
+            <text x="52" y="324.5" class="t-backend cl-badge-letter" font-size="10" font-weight="800" text-anchor="middle">C</text>
           </g>
           
-          <text data-node-label="" x="177.5" y="316" class="t-primary" font-size="13.5" font-weight="700" text-anchor="middle">PackingRuleConditionModel</text>
+          <text data-node-label="" x="177.5" y="326" class="t-primary" font-size="13.5" font-weight="700" text-anchor="middle">PackingRuleConditionModel</text>
           <g data-detail="context" data-class-compartment="attributes">
-            <line x1="32" y1="328" x2="323" y2="328" class="cl-rule" stroke-width="1"/>
-            <text data-detail="context" data-class-member="attributes" x="44" y="348" class="t-primary cl-member" font-size="11">dimension</text><text data-detail="context" x="311" y="348" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">Enum</text>
-            <rect x="36" y="354" width="283" height="18" rx="4" class="cl-zebra"/><text data-detail="context" data-class-member="attributes" x="44" y="368" class="t-primary cl-member" font-size="11">targetId</text><text data-detail="context" x="311" y="368" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">String</text>
-            <text data-detail="context" data-class-member="attributes" x="44" y="388" class="t-primary cl-member" font-size="11">targetParentId</text><text data-detail="context" x="311" y="388" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">String</text>
+            <line x1="32" y1="338" x2="323" y2="338" class="cl-rule" stroke-width="1"/>
+            <text data-detail="context" data-class-member="attributes" x="44" y="358" class="t-primary cl-member" font-size="11">dimension</text><text data-detail="context" x="311" y="358" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">Enum</text>
+            <rect x="36" y="364" width="283" height="18" rx="4" class="cl-zebra"/><text data-detail="context" data-class-member="attributes" x="44" y="378" class="t-primary cl-member" font-size="11">targetId</text><text data-detail="context" x="311" y="378" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">String</text>
+            <text data-detail="context" data-class-member="attributes" x="44" y="398" class="t-primary cl-member" font-size="11">targetParentId</text><text data-detail="context" x="311" y="398" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">String</text>
           </g>
         </g>
 
-        <g id="node-rule" data-node-id="rule" data-node-label="PackingRuleModel" tabindex="0" role="button" aria-label="聚焦PackingRuleModel，一配件下多规则 · 新增, 类" aria-pressed="false" data-node-kind="class" data-node-sublabel="一配件下多规则 · 新增" data-node-context="类" data-class-kind="class" class="cl-hue-backend">
-          <title>PackingRuleModel · 一配件下多规则 · 新增 · 类</title>
-          <rect x="433" y="284" width="250" height="124" rx="8" class="c-mask"/>
-          <rect x="433" y="284" width="250" height="124" rx="8" class="c-backend cl-type" data-animate="node" style="--step:3" stroke-width="1.2"/>
+        <g id="node-rule" data-node-id="rule" data-node-label="PackingRuleModel" tabindex="0" role="button" aria-label="聚焦PackingRuleModel，总部唯一 · 新增, 类" aria-pressed="false" data-node-kind="class" data-node-sublabel="总部唯一 · 新增" data-node-context="类" data-class-kind="class" class="cl-hue-backend">
+          <title>PackingRuleModel · 总部唯一 · 新增 · 类</title>
+          <rect x="433" y="284" width="250" height="144" rx="8" class="c-mask"/>
+          <rect x="433" y="284" width="250" height="144" rx="8" class="c-backend cl-type" data-animate="node" style="--step:3" stroke-width="1.2"/>
           <path class="cl-header c-backend" stroke="none" d="M 441 284 H 675 A 8 8 0 0 1 683 292 V 318 H 433 V 292 A 8 8 0 0 1 441 284 Z"/>
           <path class="cl-cap" d="M 445 285.4 H 671" stroke-width="2.6" stroke-linecap="round" fill="none"/>
           <g aria-hidden="true" class="cl-badge">
@@ -5336,26 +5336,27 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
             <rect x="437" y="344" width="242" height="18" rx="4" class="cl-zebra"/><text data-detail="context" data-class-member="attributes" x="445" y="358" class="t-primary cl-member" font-size="11">pickGroup</text><text data-detail="context" x="671" y="358" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">String</text>
             <text data-detail="context" data-class-member="attributes" x="445" y="378" class="t-primary cl-member" font-size="11">priority</text><text data-detail="context" x="671" y="378" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">Integer</text>
             <rect x="437" y="384" width="242" height="18" rx="4" class="cl-zebra"/><text data-detail="context" data-class-member="attributes" x="445" y="398" class="t-primary cl-member" font-size="11">state</text><text data-detail="context" x="671" y="398" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">Enum</text>
+            <text data-detail="context" data-class-member="attributes" x="445" y="418" class="t-primary cl-member" font-size="11">validityStatus</text><text data-detail="context" x="671" y="418" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">VALID/EXPIRED</text>
           </g>
         </g>
 
         <g id="node-action" data-node-id="action" data-node-label="PackingRuleMaterialModel" tabindex="0" role="button" aria-label="聚焦PackingRuleMaterialModel，本期每规则一条 · 新增, 类" aria-pressed="false" data-node-kind="class" data-node-sublabel="本期每规则一条 · 新增" data-node-context="类" data-class-kind="class" class="cl-hue-backend">
           <title>PackingRuleMaterialModel · 本期每规则一条 · 新增 · 类</title>
-          <rect x="793" y="294" width="282" height="104" rx="8" class="c-mask"/>
-          <rect x="793" y="294" width="282" height="104" rx="8" class="c-backend cl-type" data-animate="node" style="--step:3" stroke-width="1.2"/>
-          <path class="cl-header c-backend" stroke="none" d="M 801 294 H 1067 A 8 8 0 0 1 1075 302 V 328 H 793 V 302 A 8 8 0 0 1 801 294 Z"/>
-          <path class="cl-cap" d="M 805 295.4 H 1063" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+          <rect x="793" y="304" width="282" height="104" rx="8" class="c-mask"/>
+          <rect x="793" y="304" width="282" height="104" rx="8" class="c-backend cl-type" data-animate="node" style="--step:3" stroke-width="1.2"/>
+          <path class="cl-header c-backend" stroke="none" d="M 801 304 H 1067 A 8 8 0 0 1 1075 312 V 338 H 793 V 312 A 8 8 0 0 1 801 304 Z"/>
+          <path class="cl-cap" d="M 805 305.4 H 1063" stroke-width="2.6" stroke-linecap="round" fill="none"/>
           <g aria-hidden="true" class="cl-badge">
-            <rect x="805" y="303" width="16" height="16" rx="4.8" class="cl-badge-chip"/>
-            <text x="813" y="314.5" class="t-backend cl-badge-letter" font-size="10" font-weight="800" text-anchor="middle">C</text>
+            <rect x="805" y="313" width="16" height="16" rx="4.8" class="cl-badge-chip"/>
+            <text x="813" y="324.5" class="t-backend cl-badge-letter" font-size="10" font-weight="800" text-anchor="middle">C</text>
           </g>
           
-          <text data-node-label="" x="934" y="316" class="t-primary" font-size="13.5" font-weight="700" text-anchor="middle">PackingRuleMaterialModel</text>
+          <text data-node-label="" x="934" y="326" class="t-primary" font-size="13.5" font-weight="700" text-anchor="middle">PackingRuleMaterialModel</text>
           <g data-detail="context" data-class-compartment="attributes">
-            <line x1="793" y1="328" x2="1075" y2="328" class="cl-rule" stroke-width="1"/>
-            <text data-detail="context" data-class-member="attributes" x="805" y="348" class="t-primary cl-member" font-size="11">packingRuleId</text><text data-detail="context" x="1063" y="348" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">String</text>
-            <rect x="797" y="354" width="274" height="18" rx="4" class="cl-zebra"/><text data-detail="context" data-class-member="attributes" x="805" y="368" class="t-primary cl-member" font-size="11">materialId</text><text data-detail="context" x="1063" y="368" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">String</text>
-            <text data-detail="context" data-class-member="attributes" x="805" y="388" class="t-primary cl-member" font-size="11">factorType</text><text data-detail="context" x="1063" y="388" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">PER_ITEM</text>
+            <line x1="793" y1="338" x2="1075" y2="338" class="cl-rule" stroke-width="1"/>
+            <text data-detail="context" data-class-member="attributes" x="805" y="358" class="t-primary cl-member" font-size="11">packingRuleId</text><text data-detail="context" x="1063" y="358" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">String</text>
+            <rect x="797" y="364" width="274" height="18" rx="4" class="cl-zebra"/><text data-detail="context" data-class-member="attributes" x="805" y="378" class="t-primary cl-member" font-size="11">materialId</text><text data-detail="context" x="1063" y="378" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">String</text>
+            <text data-detail="context" data-class-member="attributes" x="805" y="398" class="t-primary cl-member" font-size="11">factorType</text><text data-detail="context" x="1063" y="398" class="t-muted cl-member cl-type-ref" font-size="11" text-anchor="end">PER_ITEM</text>
           </g>
         </g>
 
@@ -5369,28 +5370,28 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <text x="746" y="83" class="t-muted" font-size="9.5" text-anchor="middle">1:1 SKU</text>
         </g>
         <g data-detail="context" data-edge-from="rule" data-edge-to="condition" data-edge-label="1:N 条件" data-edge-key="2" data-edge-id="rule-condition" data-class-relationship="composition">
-          <rect x="349.44" y="330" width="57.12" height="14" rx="7" class="c-mask cl-label-box"/>
-          <text x="378" y="340" class="t-muted" font-size="9.5" text-anchor="middle">1:N 条件</text>
+          <rect x="349.44" y="340" width="57.12" height="14" rx="7" class="c-mask cl-label-box"/>
+          <text x="378" y="350" class="t-muted" font-size="9.5" text-anchor="middle">1:N 条件</text>
         </g>
         <g data-detail="context" data-edge-from="rule" data-edge-to="action" data-edge-label="1:1 动作" data-edge-key="3" data-edge-id="rule-action" data-class-relationship="composition">
-          <rect x="709.44" y="343" width="57.12" height="14" rx="7" class="c-mask cl-label-box"/>
-          <text x="738" y="353" class="t-muted" font-size="9.5" text-anchor="middle">1:1 动作</text>
+          <rect x="709.44" y="353" width="57.12" height="14" rx="7" class="c-mask cl-label-box"/>
+          <text x="738" y="363" class="t-muted" font-size="9.5" text-anchor="middle">1:1 动作</text>
         </g>
         <g data-detail="context" data-edge-from="action" data-edge-to="addon" data-edge-label="materialId 引用" data-edge-key="4" data-edge-id="action-addon" data-class-relationship="association">
-          <rect x="744" y="218" width="98.35" height="14" rx="7" class="c-mask cl-label-box"/>
-          <text x="793.175" y="228" class="t-muted" font-size="9.5" text-anchor="middle">materialId 引用</text>
+          <rect x="744" y="223" width="98.35" height="14" rx="7" class="c-mask cl-label-box"/>
+          <text x="793.175" y="233" class="t-muted" font-size="9.5" text-anchor="middle">materialId 引用</text>
         </g>
 
         <!-- Legend -->
         <g data-legend="">
-          <text x="24" y="430" class="t-primary" font-size="12" font-weight="650">图例</text>
-          <g data-legend-semantic-kind="association" data-legend-x="24" data-legend-baseline="450" data-legend-width="72">
-            <rect class="cl-legend-hit" tabindex="0" role="img" aria-label="关联" x="18" y="435" width="84" height="22" rx="11"/><path d="M 26 446 L 56 446" class="a-default cl-relationship" stroke-width="1.5" marker-end="url(#cl-open)"/>
-            <text x="66" y="450" class="t-muted" font-size="12" font-weight="500">关联</text>
+          <text x="24" y="450" class="t-primary" font-size="12" font-weight="650">图例</text>
+          <g data-legend-semantic-kind="association" data-legend-x="24" data-legend-baseline="470" data-legend-width="72">
+            <rect class="cl-legend-hit" tabindex="0" role="img" aria-label="关联" x="18" y="455" width="84" height="22" rx="11"/><path d="M 26 466 L 56 466" class="a-default cl-relationship" stroke-width="1.5" marker-end="url(#cl-open)"/>
+            <text x="66" y="470" class="t-muted" font-size="12" font-weight="500">关联</text>
           </g>
-          <g data-legend-semantic-kind="composition" data-legend-x="118" data-legend-baseline="450" data-legend-width="72">
-            <rect class="cl-legend-hit" tabindex="0" role="img" aria-label="组合" x="112" y="435" width="84" height="22" rx="11"/><path d="M 120 446 L 150 446" class="a-default cl-relationship" stroke-width="1.5" marker-start="url(#cl-diamond-filled)"/>
-            <text x="160" y="450" class="t-muted" font-size="12" font-weight="500">组合</text>
+          <g data-legend-semantic-kind="composition" data-legend-x="118" data-legend-baseline="470" data-legend-width="72">
+            <rect class="cl-legend-hit" tabindex="0" role="img" aria-label="组合" x="112" y="455" width="84" height="22" rx="11"/><path d="M 120 466 L 150 466" class="a-default cl-relationship" stroke-width="1.5" marker-start="url(#cl-diamond-filled)"/>
+            <text x="160" y="470" class="t-muted" font-size="12" font-weight="500">组合</text>
           </g>
         </g>
       </svg>
@@ -5576,8 +5577,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>条件关系</h3>
         </div>
         <ul>
-          <li>同配件下规则 OR；单规则维度 AND；同维度值 OR。</li>
-          <li>新建 ONLINE；暂停 PAUSE；逻辑删除 INVALID。</li>
+          <li>SKU逐个选择，targetId=基础skuId；三种维度AND，同维度多值OR。</li>
+          <li>state保留商户ONLINE/PAUSE，逻辑删除INVALID；validityStatus建议独立VALID/EXPIRED。</li>
         </ul>
       </div>
 
@@ -5587,7 +5588,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>组与优先级</h3>
         </div>
         <ul>
-          <li>pickGroup=来源categoryId；priority映射全组配件sort，值越大越优先。</li>
+          <li>pickGroup=来源categoryId；priority映射全组配件sort，越大越优先。</li>
+          <li>总部唯一三表；门店、菜单和销售域均无规则副本。</li>
         </ul>
       </div>
     </div>

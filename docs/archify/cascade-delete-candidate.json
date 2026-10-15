@@ -2,17 +2,17 @@
   "schema_version": 1,
   "diagram_type": "sequence",
   "meta": {
-    "title": "删除标准目标 · 清引用、暂停与逻辑删除",
+    "title": "仅总部删除 · 清引用与已失效（有效性字段建议）",
     "locale": "zh-CN",
     "quality_profile": "showcase",
-    "output": ".archify/sequence-cascade-delete-20261015-100424/cascade-delete.html"
+    "output": ".archify/sequence-cascade-delete-20261015-110926/cascade-delete.html"
   },
   "participants": [
     {
       "id": "source",
       "type": "backend",
-      "label": "商品管理",
-      "sublabel": "SKU / 做法 / 加料"
+      "label": "总部商品管理",
+      "sublabel": "基础 SKU / 做法 / 加料"
     },
     {
       "id": "events",
@@ -29,14 +29,14 @@
     {
       "id": "db",
       "type": "database",
-      "label": "规则配置库",
-      "sublabel": "ONLINE / PAUSE"
+      "label": "总部唯一规则库",
+      "sublabel": "state / validityStatus"
     },
     {
       "id": "change",
       "type": "backend",
       "label": "管理变更登记",
-      "sublabel": "清引用 / 暂停 / 删除"
+      "sublabel": "清引用 / 失效 / 删除"
     }
   ],
   "messages": [
@@ -44,7 +44,7 @@
       "id": "m1",
       "from": "source",
       "to": "events",
-      "label": "源删除提交后发送目标删除事件",
+      "label": "基础目标删除后登记事件",
       "y": 170,
       "variant": "dashed"
     },
@@ -52,85 +52,86 @@
       "id": "m2",
       "from": "events",
       "to": "cascade",
-      "label": "消费删除事件",
+      "label": "仅处理总部基础来源",
+      "note": "门店删除事件忽略，不查规则",
       "y": 218,
-      "variant": "dashed"
+      "variant": "security"
     },
     {
       "id": "m3",
       "from": "cascade",
       "to": "db",
-      "label": "按维度 + 目标 ID 反查引用",
-      "y": 266
+      "label": "按总部品牌、维度、目标反查",
+      "y": 296
     },
     {
       "id": "m4",
       "from": "db",
       "to": "cascade",
-      "label": "返回受影响规则及原维度",
-      "y": 314,
+      "label": "返回受影响的非删除规则",
+      "y": 344,
       "variant": "return"
     },
     {
       "id": "m5",
       "from": "cascade",
       "to": "db",
-      "label": "锁内：记录原维度并清目标条件",
-      "y": 362
+      "label": "锁内记录原维度并清目标条件",
+      "y": 392
     },
     {
       "id": "m6",
       "from": "db",
       "to": "cascade",
-      "label": "返回原维度及清理后条件",
-      "y": 410,
+      "label": "返回删除前维度及剩余条件",
+      "y": 440,
       "variant": "return"
     },
     {
       "id": "m7",
       "from": "cascade",
       "to": "db",
-      "label": "总条件为空：置 INVALID",
-      "note": "清条件、动作及管理快照",
-      "y": 458
+      "label": "总条件为空：state=INVALID",
+      "note": "清条件、动作及诊断信息",
+      "y": 488
     },
     {
       "id": "m8",
       "from": "cascade",
       "to": "db",
-      "label": "否则原维度删空：置 PAUSE",
-      "note": "保留剩余条件与物料动作",
-      "y": 536
+      "label": "否则原维度空：有效性EXPIRED",
+      "note": "保留商户state、剩余条件和动作",
+      "y": 566
     },
     {
       "id": "m9",
       "from": "cascade",
       "to": "db",
-      "label": "否则：保持原状态",
-      "y": 614
+      "label": "否则：保留原state和有效性",
+      "y": 644
     },
     {
       "id": "m10",
       "from": "db",
       "to": "cascade",
       "label": "事务提交；返回各分支结果",
-      "y": 662,
+      "y": 692,
       "variant": "return"
     },
     {
       "id": "m11",
       "from": "cascade",
       "to": "change",
-      "label": "登记清引用、暂停或删除事实",
-      "y": 710,
+      "label": "登记清引用、失效或删除事实",
+      "y": 740,
       "variant": "dashed"
     },
     {
       "id": "m12",
       "from": "cascade",
       "to": "events",
-      "label": "消费成功；失败回滚并重试",
-      "y": 758,
+      "label": "成功确认；失败回滚并重试",
+      "y": 788,
       "variant": "return"
     }
   ],
@@ -139,15 +140,16 @@
       "dot": "amber",
       "title": "级联口径",
       "items": [
-        "三个互斥分支：总条件空逻辑删除；原AND维度空且其他有值则暂停；否则保留状态。",
-        "原本未选择的维度不触发暂停；建议暂停后重存条件，再显式启用。"
+        "总条件空逻辑删除；原AND维度删空且其他有值标已失效；否则保留两状态。",
+        "有效性字段建议VALID/EXPIRED；自动失效保留商户起售/停售意图。"
       ]
     },
     {
       "dot": "emerald",
       "title": "作用范围",
       "items": [
-        "总部删除清基础配置；门店删除只作用本门店数据。"
+        "仅总部基础删除触发；门店删除不清条件、不改总部规则；无门店规则副本。",
+        "计算准入：state=ONLINE且validityStatus=VALID。"
       ]
     }
   ]
